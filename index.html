@@ -1,0 +1,300 @@
+<html>
+<head><title>Linux IPv6 Router Advertisement Daemon (radvd)</title></head>
+<body><h2 align=center>Linux IPv6 Router Advertisement Daemon (radvd)</h2>
+
+<p>The router advertisement daemon (radvd) is run by Linux or BSD
+systems acting as IPv6 routers.  It sends Router Advertisement messages,
+specified by <a href="http://www.faqs.org/rfcs/rfc2461.html">RFC
+2461</a>, to a local Ethernet LAN periodically and when requested by a
+node sending a Router Solicitation message.  These messages are required
+for IPv6 stateless autoconfiguration.</p>
+
+<p>This release includes support for Mobile IPv6, 6to4 addressing, router
+preferences and more specific routes, and
+non-broadcast multiple-access links such as ISATAP.  Both Linux and BSD
+are supported.  For more information about recent modifications, please
+see the <a href="CHANGES">CHANGES file</a> included with the
+latest release of radvd.</p>
+
+<h3>Mailing Lists</h3>
+
+<p>There are two mailing lists for radvd:
+<a href="http://lists.litech.org/listinfo/radvd-announce-l">radvd-announce-l</a>
+and
+<a href="http://lists.litech.org/listinfo/radvd-devel-l">radvd-devel-l</a>.
+The first list is for announcements of new radvd releases, and the second
+list is for dicussion of radvd development. Please subscribe to one or both
+of these if you are interested in radvd.</p>
+
+<h3>Latest Update(s)</h3>
+
+<p>March 5, 2010 - Version 1.6 updates:
+<ul>
+	<li>Decrease MSG_SIZE from 4096 to about 1500B. Send buffer
+	                uses a smaller size in order to avoid sending out
+	                                fragmented packets, yet being able to receive full-size
+                frames.
+	<li>Keep track of buffer size and exit if the number of
+	                prefixes/routes/etc. would grow too much. Prevent a
+memory
+                corruption due to wrong memset. Patches from Jan
+                                Gorig, Red Hat bug #554125.
+	<li>On BSD use getifaddrs() also in setup_deviceinfo(),
+	                fixes a multiple interfaces problem on NetBSD 5 due
+to
+                change in data structures. Patch from Michael Stapelberg.
+        <li>Allow radvd.conf prefix, clients, route, and RDNSS options
+                        to be in any order.  Patch from Michael Stapelberg.
+                                
+</ul>
+
+</ul>
+
+
+<p>Update information for older releases is near the bottom of this
+page.</p>
+
+<h3>Download</h3>
+
+<p>Several Linux vendors, including RedHat and SuSE, include radvd with
+their distributions.  Please check with your vendor before downloading a
+package from here.</p>
+
+<p>Source for radvd is available as a gzipped tar file and source RPM.
+SHA1sum's are also listed below.</p>
+
+<ul>
+ <li><a href="dist/radvd-1.6.tar.gz">radvd-1.6.tar.gz</a>
+(3f6f1afeab6bfc35a464e6ef6f76ae00cc285d32)
+ <li><a href="dist/radvd-1.6-1.src.rpm">radvd-1.6-1.src.rpm</a>
+(b4a8d14830778cf93350ffa54a58f9ddbd193ddf)
+ <li><a href="dist/RPMS.readme">notes about the RPMS</a>
+</ul>
+
+<p><a href="dist/">Older versions</a> of radvd are still available.</p>
+
+<h3>Development Information</h3>
+
+<p>We encourage you to help with radvd development!  The CVS repository
+for radvd is available to anybody in several formats:</p>
+
+<ul>
+
+<li>Access for casual browsing is easiest through <a
+href="http://cvs.litech.org/radvd/">CVSweb</a>.</li>
+
+<li>Check out a working copy of radvd with anonymous CVS:
+<pre>
+    $ cvs -d :pserver:anonymous@cvs.litech.org:/work/cvsroot login
+    (Logging in to anonymous@cvs.litech.org)
+    CVS password: <i>just press return here</i>
+    $ cvs -d :pserver:anonymous@cvs.litech.org:/work/cvsroot checkout radvd
+    cvs server: Updating radvd
+    U radvd/CHANGES
+    U radvd/COPYRIGHT
+    U radvd/INTRO.html
+    U radvd/Makefile.am
+    <i>...</i>
+</pre></li>
+
+</ul>
+
+<p>You may want to discuss development on the 
+<a href="http://lists.litech.org/listinfo/radvd-devel-l">radvd-devel-l</a>
+mailing list.  Please consider contributing bugfixes and improvements
+back to the project.</p>
+
+<h3>Older update information</h3>
+
+<p>September 10, 2009 - Version 1.5 updates:
+<ul>
+	<li>Fix infinite loop/segmentation fault problems when cable
+		plugged out/plugged back in, caused by reload_config()
+				and subsequent timer list corruption. 
+	<li>Fix IgnoreIfMissing when cable is unplugged at startup.
+		Radvd would keep skipping the interface.
+	<li>Fix parallel make.				
+</ul>
+
+<p>August 3, 2009 - Version 1.4 updates:
+<ul>
+	<li>Fix an unintentional change in 1.3: RAs were accidentally often
+	unicast to solicitors instead of being multicast.  This is still
+	compliant with the specification but is not optimal.
+</ul>
+
+<p>July 7, 2009 - Version 1.3 updates:
+<ul>
+	<li>Add a "clients" directive which can be used to specify the clients
+to which radvd will unicast RAs and ignore RSs from every other client. 
+Possibly useful in gradual rollouts.
+	<li>Work around Linux IPV6_RECVPKTINFO|IPV6_RECVHOPLIMIT renumbering
+issues with some combinations of glibc and kernel (e.g. OpenWrt and Freetz
+projects)
+	<li>Use getifaddrs() on BSD instead of ioctl; work around unaligned
+traps on Alpha; Make NetBSD 5 compile.
+</ul>
+<p>October 28, 2008 - Version 1.2 updates:
+<ul>
+	<li>Accept virtually any kind of interface naming convention.
+	<li>If stale radvd.pid exists, try to overwrite it unless the specified PID exists.
+	<li>Define _GNU_SOURCE to fix compilation with glibc >= 2.8.
+	<li>Remove -Wconversion from default CFLAGS due to bogus warnings, fix some real warnings.
+	<li>Decrease the default preferred lifetimes from 30/1 days to 1d/4h.
+</ul>
+
+<p>February 4, 2008 - Version 1.1 updates:
+<ul>
+	<li>Implement privilege separation on Linux: a master root process
+            (which is able to reconfigure interfaces) and the main process.
+            There is '-s' toggle to keep old behaviour.
+	<li>Fix Linux retrans_timer on old kernels (newer ones have retrans_timer_ms)
+	<li>Fix stderr+syslog (default) logging on non-i386 platforms.
+	<li>Require that interface must be RUNNING instead of just UP. 
+            <b>Note: this could break deployments with very old kernels.</b>
+	<li>Implement automatic interface address advertising with special prefix ::/64.
+	<li>Relax interface naming (e.g. with VLANs) requirements.
+	<li>Fix ordering of route, prefix and RDNSS options (only matters with RDNSS)
+</ul>
+
+<p>November 1, 2006 - Version 1.0 updates:
+<ul>
+	<li>Fix AdvDefaultLifetime initalization, broken in 0.9.1.
+	<li>Fix STDERR+syslog logging, don't try STDERR after forking.
+	<li>Implement RDNSS draft with (non-allocated) ND type code 25.
+	<li>Redefined IgnoreIfMissing: failed interfaces are now
+reinitialized by default.  IgnoreIfMissing only omits warnings about these.
+	<li>Unblock SIGALRM at startup.
+	<li>Implement MAX_INITIAL_RTR_ADVERT_INTERVAL handling.
+	<li>Perform some dynamic/static code audit, fix some minor bugs and
+do cleanup as a result.
+</ul>
+
+<p>January 13, 2006 - Version 0.9.1 updates:
+<ul>
+  <li>Clean up signed/unsigned values, add more warnings to CFLAGS
+  <li>Fix a couple of  IPv6 Ready Logo Phase-2 IPv6 Core
+                  Protocols Self Test issues
+  <li>Create a short FAQ in README file, other minor documentation updates
+  <li>Get interface MTU automatically, so that you can
+                  use jumboframes and advertise MTU >1500
+</ul>
+
+<p>October 19, 2005 - Version 0.9 updates:
+<ul>
+  <li>radvdump cleaned up, only config-file syntax supported
+   <li>add NEMO Basic support (RFC3961) and fix default
+        HomeAgentLifetime
+  <li>more robust timer handler in case the kernel is buggy
+  <li>new default logging method "stderr_syslog";
+                Everything is logged on syslog, but the most important messages
+    (i.e., start-up failures) are also logged on stderr.
+</ul>
+
+<p>July 8, 2005 - Version 0.8 updates:
+<ul>
+	<li>More specific route codepoint has been changed to the official value, 24.
+	<li>Fix incorrect calculation of the 6to4 prefix on big-endian
+architectures.
+	<li>Fix a multicast join issue with HUP signal on newer 2.6.12+
+Linux kernels.
+	<li>Merge some MIPv6 and non-MIPv6 code, improve error messages.
+	<li>Improve slightly the error messages from config file parsing.
+</ul>
+
+<p>February 21, 2005 - Version 0.7.3 updates:
+<ul>
+    <li>A large number of fixes and cleanups
+    <li>Support Router Preferences and More Specific routes
+    <li>Add "IgnoreIfMissing" interface flag, to be used with
+interfaces which may become available only later on 
+</ul>
+
+
+<p>October 28, 2002 - Version 0.7.2 updates:
+<ul>
+                 <li>add support for VLANs (from USAGI)
+                 <li>make it compile better on newer NetBSD's (NetBSD)
+                 <li>fix a syntax error in radvd.conf(5) sample documentation
+                 <li>use IPV6_RECV{HOPLIMIT,PKTINFO} not 
+                       IPV6_{HOPLIMIT,PKTINFO} if supported
+                 <li>(in Red Hat spec file) don't create radvd gid explicitly
+                 <li>a lot of coding style cleanups
+</ul>
+
+<p>January 16, 2002 - Version 0.7.1 updates:</p>
+
+<ul>
+<li>Check that forwarding is enabled when starting radvd (helps avoid odd problems)
+<li>Check configuration file permissions (note: in setuid operation, must not be writable by the user.group)
+<li>Cleanups and enhancements for radvdump
+<li>Ensure NULL-termination with strncpy even with overlong strings (non-criticals, but better safe than 
+sorry)
+<li>Update config.{guess,sub} to cope with some newer architectures
+<li>Minor fixes and cleanups
+</ul>
+
+
+<p>November 21, 2001 - Version 0.7.0 updates:</p>
+
+<ul>
+ 
+<li>Maintainership of radvd transferred from Lars Fenneberg to Nathan
+Lutchansky and Pekka Savola</li>
+<li>Support for ISATAP and other NMBA link types</li>   
+<li>Bug fixed concerning FreeBSD 4.4 with multiple interfaces</li>
+<li>A few cleanups, including a couple of possible 1-byte buffer
+overflows (non-critical)</li>
+</ul>
+
+<p>June 20, 2001 - Version 0.6.2pl4 updates:</p>
+
+<ul>
+
+<li>Set supplementary groups properly when dropping root (security)</li>
+<li>Do some more RFC2461 validity checks on received packets</li>
+<li>Rejoin all-routers multicast group if interface is cycled</li>
+<li>Remove provider-based addressing support, minor cleanups</li>
+
+</ul>
+
+<p>April 28, 2001 - Version 0.6.2pl3 updates:</p>
+
+<ul>
+
+<li>Fixed broken 6to4 support.</li>
+<li>Converted to automake-based build style.</li>
+
+</ul>
+
+<p>April 14, 2001 - Version 0.6.2pl2 updates:</p>
+
+<ul>
+<li>Now compiles on FreeBSD. (suggested by Marko Myllynen)</li>
+<li>Allows negative values for Home Agent Preference. (from Marko Myllynen)</li>
+<li>Misc bugfixes.</li>
+</ul>
+
+<p>April 4, 2001 - Version 0.6.2pl1 contains:</p>
+
+<ul>
+<li>Integrated 6to4 support, to allow a prefix address to be dynamically
+created from the IPv4 address of a specific interface at configuration
+time. (from Nathan Lutchansky)</li>
+<li>The option to have radvd drop root privileges after the ICMP
+socket has been opened. (from Pekka Savola)</li>
+<li>The option to have radvd chroot to a "safe" directory. Currently
+unusable under Linux. (from Pekka Savola)</li>
+<li>Fixed signal handling, allowing signals to take effect immediately
+rather than at the next advertisement. (from Nathan Lutchansky)</li>
+<li>Misc bugfixes. (from Pekka Savola)</li>
+<li>Configuration parser grammar cleanup. (from Nathan Lutchansky)</li>
+</ul>
+
+<hr>
+
+<a href="http://6bone.informatik.uni-leipzig.de/ipv6/stats/stats.php3">
+<img src="http://6bone.informatik.uni-leipzig.de/ipv6/stats/log.php3?URL=www.litech.org"></a><br>
+Last modified 2005-10-19 by psavola.
+</body>
+
