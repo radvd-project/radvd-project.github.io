@@ -28,31 +28,23 @@ of these if you are interested in radvd.</p>
 
 <h3>Latest Update(s)</h3>
 
-<p>March 5, 2010 - Version 1.6 updates:
+<p>Jan 12, 2011 - Version 1.7 updates:</p>
 <ul>
-	<li>Decrease MSG_SIZE from 4096 to about 1500B. Send buffer
-	                uses a smaller size in order to avoid sending out
-	                                fragmented packets, yet being able to receive full-size
-                frames.
-	<li>Keep track of buffer size and exit if the number of
-	                prefixes/routes/etc. would grow too much. Prevent a
-memory
-                corruption due to wrong memset. Patches from Jan
-                                Gorig, Red Hat bug #554125.
-	<li>On BSD use getifaddrs() also in setup_deviceinfo(),
-	                fixes a multiple interfaces problem on NetBSD 5 due
-to
-                change in data structures. Patch from Michael Stapelberg.
-        <li>Allow radvd.conf prefix, clients, route, and RDNSS options
-                        to be in any order.  Patch from Michael Stapelberg.
-                                
-</ul>
-
+<li>Fix radvd skipping multiple interfaces when
+                UnicastOnly is on or AdvSendAdvert is off.
+                This got broken in radvd 1.3. Patch from Cedric BAIL.</li>
+<li>Fix a segmentation fault on reload_config() timer list
+                corruption that only occurs with multiple interfaces.</li>
+<li>Add '-c' flag to test configuration.</li>
+<li>Deprecate old, pre-RFC5006 parameters.
+                Support RFC6106 by adding DNS Search List support.
+                From Pierre Ossman.</li>
+<li>AdvSourceLLAddress fixed on FreeBSD when link
+                layer token length is zero.</li>
 </ul>
 
 
-<p>Update information for older releases is near the bottom of this
-page.</p>
+<p>Update information for older releases is near the bottom of this page.</p>
 
 <h3>Download</h3>
 
@@ -60,15 +52,11 @@ page.</p>
 their distributions.  Please check with your vendor before downloading a
 package from here.</p>
 
-<p>Source for radvd is available as a gzipped tar file and source RPM.
-SHA1sum's are also listed below.</p>
+<p>Source for radvd is available as a gzipped tar file and source RPM. SHA1 hashes are also listed below.</p>
 
 <ul>
- <li><a href="dist/radvd-1.6.tar.gz">radvd-1.6.tar.gz</a>
-(3f6f1afeab6bfc35a464e6ef6f76ae00cc285d32)
- <li><a href="dist/radvd-1.6-1.src.rpm">radvd-1.6-1.src.rpm</a>
-(b4a8d14830778cf93350ffa54a58f9ddbd193ddf)
- <li><a href="dist/RPMS.readme">notes about the RPMS</a>
+ <li><a href="dist/radvd-1.7.tar.gz">radvd-1.7.tar.gz</a>(3a41fa681c409160eb767d60cbb8038f84b3f8af)
+ <li><a href="dist/radvd-1.7-1.src.rpm">radvd-1.7-1.src.rpm</a>(b49012accc931a003e72dd59d638d93f83a340e0)
 </ul>
 
 <p><a href="dist/">Older versions</a> of radvd are still available.</p>
@@ -106,7 +94,16 @@ back to the project.</p>
 
 <h3>Older update information</h3>
 
-<p>September 10, 2009 - Version 1.5 updates:
+<p>March 5, 2010 - Version 1.6 updates:</p>
+<ul>
+	<li>Decrease MSG_SIZE from 4096 to about 1500B. Send buffer uses a smaller size in order to avoid sending out fragmented packets, yet being able to receive full-size frames.
+	<li>Keep track of buffer size and exit if the number of prefixes/routes/etc. would grow too much. Prevent a memory corruption due to wrong memset. Patches from Jan Gorig, Red Hat bug #554125.
+	<li>On BSD use getifaddrs() also in setup_deviceinfo(), fixes a multiple interfaces problem on NetBSD 5 due to change in data structures. Patch from Michael Stapelberg.
+        <li>Allow radvd.conf prefix, clients, route, and RDNSS options to be in any order.  Patch from Michael Stapelberg.
+</ul>
+
+
+<p>September 10, 2009 - Version 1.5 updates:</p>
 <ul>
 	<li>Fix infinite loop/segmentation fault problems when cable
 		plugged out/plugged back in, caused by reload_config()
@@ -116,14 +113,14 @@ back to the project.</p>
 	<li>Fix parallel make.				
 </ul>
 
-<p>August 3, 2009 - Version 1.4 updates:
+<p>August 3, 2009 - Version 1.4 updates:</p>
 <ul>
 	<li>Fix an unintentional change in 1.3: RAs were accidentally often
 	unicast to solicitors instead of being multicast.  This is still
 	compliant with the specification but is not optimal.
 </ul>
 
-<p>July 7, 2009 - Version 1.3 updates:
+<p>July 7, 2009 - Version 1.3 updates:</p>
 <ul>
 	<li>Add a "clients" directive which can be used to specify the clients
 to which radvd will unicast RAs and ignore RSs from every other client. 
@@ -134,7 +131,7 @@ projects)
 	<li>Use getifaddrs() on BSD instead of ioctl; work around unaligned
 traps on Alpha; Make NetBSD 5 compile.
 </ul>
-<p>October 28, 2008 - Version 1.2 updates:
+<p>October 28, 2008 - Version 1.2 updates:</p>
 <ul>
 	<li>Accept virtually any kind of interface naming convention.
 	<li>If stale radvd.pid exists, try to overwrite it unless the specified PID exists.
@@ -143,7 +140,7 @@ traps on Alpha; Make NetBSD 5 compile.
 	<li>Decrease the default preferred lifetimes from 30/1 days to 1d/4h.
 </ul>
 
-<p>February 4, 2008 - Version 1.1 updates:
+<p>February 4, 2008 - Version 1.1 updates:</p>
 <ul>
 	<li>Implement privilege separation on Linux: a master root process
             (which is able to reconfigure interfaces) and the main process.
@@ -157,7 +154,7 @@ traps on Alpha; Make NetBSD 5 compile.
 	<li>Fix ordering of route, prefix and RDNSS options (only matters with RDNSS)
 </ul>
 
-<p>November 1, 2006 - Version 1.0 updates:
+<p>November 1, 2006 - Version 1.0 updates:</p>
 <ul>
 	<li>Fix AdvDefaultLifetime initalization, broken in 0.9.1.
 	<li>Fix STDERR+syslog logging, don't try STDERR after forking.
@@ -170,7 +167,7 @@ reinitialized by default.  IgnoreIfMissing only omits warnings about these.
 do cleanup as a result.
 </ul>
 
-<p>January 13, 2006 - Version 0.9.1 updates:
+<p>January 13, 2006 - Version 0.9.1 updates:</p>
 <ul>
   <li>Clean up signed/unsigned values, add more warnings to CFLAGS
   <li>Fix a couple of  IPv6 Ready Logo Phase-2 IPv6 Core
@@ -180,7 +177,7 @@ do cleanup as a result.
                   use jumboframes and advertise MTU >1500
 </ul>
 
-<p>October 19, 2005 - Version 0.9 updates:
+<p>October 19, 2005 - Version 0.9 updates:</p>
 <ul>
   <li>radvdump cleaned up, only config-file syntax supported
    <li>add NEMO Basic support (RFC3961) and fix default
@@ -191,7 +188,7 @@ do cleanup as a result.
     (i.e., start-up failures) are also logged on stderr.
 </ul>
 
-<p>July 8, 2005 - Version 0.8 updates:
+<p>July 8, 2005 - Version 0.8 updates:</p>
 <ul>
 	<li>More specific route codepoint has been changed to the official value, 24.
 	<li>Fix incorrect calculation of the 6to4 prefix on big-endian
@@ -202,7 +199,7 @@ Linux kernels.
 	<li>Improve slightly the error messages from config file parsing.
 </ul>
 
-<p>February 21, 2005 - Version 0.7.3 updates:
+<p>February 21, 2005 - Version 0.7.3 updates:</p>
 <ul>
     <li>A large number of fixes and cleanups
     <li>Support Router Preferences and More Specific routes
@@ -211,7 +208,7 @@ interfaces which may become available only later on
 </ul>
 
 
-<p>October 28, 2002 - Version 0.7.2 updates:
+<p>October 28, 2002 - Version 0.7.2 updates:</p>
 <ul>
                  <li>add support for VLANs (from USAGI)
                  <li>make it compile better on newer NetBSD's (NetBSD)
@@ -295,6 +292,6 @@ rather than at the next advertisement. (from Nathan Lutchansky)</li>
 
 <a href="http://6bone.informatik.uni-leipzig.de/ipv6/stats/stats.php3">
 <img src="http://6bone.informatik.uni-leipzig.de/ipv6/stats/log.php3?URL=www.litech.org"></a><br>
-Last modified 2005-10-19 by psavola.
+Last modified 2011-1-12 by reubenhwk.
 </body>
-
+</html>
