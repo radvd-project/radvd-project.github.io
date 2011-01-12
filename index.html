@@ -1,6 +1,13 @@
-<html>
-<head><title>Linux IPv6 Router Advertisement Daemon (radvd)</title></head>
-<body><h2 align=center>Linux IPv6 Router Advertisement Daemon (radvd)</h2>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<head>
+ <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+ <title>Linux IPv6 Router Advertisement Daemon (radvd)</title>
+</head>
+
+<body>
+<h2>Linux IPv6 Router Advertisement Daemon (radvd)</h2>
 
 <p>The router advertisement daemon (radvd) is run by Linux or BSD
 systems acting as IPv6 routers.  It sends Router Advertisement messages,
@@ -41,6 +48,7 @@ of these if you are interested in radvd.</p>
                 From Pierre Ossman.</li>
 <li>AdvSourceLLAddress fixed on FreeBSD when link
                 layer token length is zero.</li>
+<li>Welcome new co-maintainer: Reuben Hawkins</li>
 </ul>
 
 
@@ -55,8 +63,8 @@ package from here.</p>
 <p>Source for radvd is available as a gzipped tar file and source RPM. SHA1 hashes are also listed below.</p>
 
 <ul>
- <li><a href="dist/radvd-1.7.tar.gz">radvd-1.7.tar.gz</a>(3a41fa681c409160eb767d60cbb8038f84b3f8af)
- <li><a href="dist/radvd-1.7-1.src.rpm">radvd-1.7-1.src.rpm</a>(b49012accc931a003e72dd59d638d93f83a340e0)
+ <li><a href="dist/radvd-1.7.tar.gz">radvd-1.7.tar.gz</a> (3a41fa681c409160eb767d60cbb8038f84b3f8af)</li>
+ <li><a href="dist/radvd-1.7-1.src.rpm">radvd-1.7-1.src.rpm</a> (b49012accc931a003e72dd59d638d93f83a340e0)</li>
 </ul>
 
 <p><a href="dist/">Older versions</a> of radvd are still available.</p>
@@ -96,10 +104,10 @@ back to the project.</p>
 
 <p>March 5, 2010 - Version 1.6 updates:</p>
 <ul>
-	<li>Decrease MSG_SIZE from 4096 to about 1500B. Send buffer uses a smaller size in order to avoid sending out fragmented packets, yet being able to receive full-size frames.
-	<li>Keep track of buffer size and exit if the number of prefixes/routes/etc. would grow too much. Prevent a memory corruption due to wrong memset. Patches from Jan Gorig, Red Hat bug #554125.
-	<li>On BSD use getifaddrs() also in setup_deviceinfo(), fixes a multiple interfaces problem on NetBSD 5 due to change in data structures. Patch from Michael Stapelberg.
-        <li>Allow radvd.conf prefix, clients, route, and RDNSS options to be in any order.  Patch from Michael Stapelberg.
+	<li>Decrease MSG_SIZE from 4096 to about 1500B. Send buffer uses a smaller size in order to avoid sending out fragmented packets, yet being able to receive full-size frames.</li>
+	<li>Keep track of buffer size and exit if the number of prefixes/routes/etc. would grow too much. Prevent a memory corruption due to wrong memset. Patches from Jan Gorig, Red Hat bug #554125.</li>
+	<li>On BSD use getifaddrs() also in setup_deviceinfo(), fixes a multiple interfaces problem on NetBSD 5 due to change in data structures. Patch from Michael Stapelberg.</li>
+        <li>Allow radvd.conf prefix, clients, route, and RDNSS options to be in any order.  Patch from Michael Stapelberg.</li>
 </ul>
 
 
@@ -107,128 +115,128 @@ back to the project.</p>
 <ul>
 	<li>Fix infinite loop/segmentation fault problems when cable
 		plugged out/plugged back in, caused by reload_config()
-				and subsequent timer list corruption. 
+				and subsequent timer list corruption. </li>
 	<li>Fix IgnoreIfMissing when cable is unplugged at startup.
-		Radvd would keep skipping the interface.
-	<li>Fix parallel make.				
+		Radvd would keep skipping the interface.</li>
+	<li>Fix parallel make.				</li>
 </ul>
 
 <p>August 3, 2009 - Version 1.4 updates:</p>
 <ul>
 	<li>Fix an unintentional change in 1.3: RAs were accidentally often
 	unicast to solicitors instead of being multicast.  This is still
-	compliant with the specification but is not optimal.
+	compliant with the specification but is not optimal.</li>
 </ul>
 
 <p>July 7, 2009 - Version 1.3 updates:</p>
 <ul>
 	<li>Add a "clients" directive which can be used to specify the clients
 to which radvd will unicast RAs and ignore RSs from every other client. 
-Possibly useful in gradual rollouts.
+Possibly useful in gradual rollouts.</li>
 	<li>Work around Linux IPV6_RECVPKTINFO|IPV6_RECVHOPLIMIT renumbering
 issues with some combinations of glibc and kernel (e.g. OpenWrt and Freetz
-projects)
+projects)</li>
 	<li>Use getifaddrs() on BSD instead of ioctl; work around unaligned
-traps on Alpha; Make NetBSD 5 compile.
+traps on Alpha; Make NetBSD 5 compile.</li>
 </ul>
 <p>October 28, 2008 - Version 1.2 updates:</p>
 <ul>
-	<li>Accept virtually any kind of interface naming convention.
-	<li>If stale radvd.pid exists, try to overwrite it unless the specified PID exists.
-	<li>Define _GNU_SOURCE to fix compilation with glibc >= 2.8.
-	<li>Remove -Wconversion from default CFLAGS due to bogus warnings, fix some real warnings.
-	<li>Decrease the default preferred lifetimes from 30/1 days to 1d/4h.
+	<li>Accept virtually any kind of interface naming convention.</li>
+	<li>If stale radvd.pid exists, try to overwrite it unless the specified PID exists.</li>
+	<li>Define _GNU_SOURCE to fix compilation with glibc >= 2.8.</li>
+	<li>Remove -Wconversion from default CFLAGS due to bogus warnings, fix some real warnings.</li>
+	<li>Decrease the default preferred lifetimes from 30/1 days to 1d/4h.</li>
 </ul>
 
 <p>February 4, 2008 - Version 1.1 updates:</p>
 <ul>
 	<li>Implement privilege separation on Linux: a master root process
             (which is able to reconfigure interfaces) and the main process.
-            There is '-s' toggle to keep old behaviour.
-	<li>Fix Linux retrans_timer on old kernels (newer ones have retrans_timer_ms)
-	<li>Fix stderr+syslog (default) logging on non-i386 platforms.
-	<li>Require that interface must be RUNNING instead of just UP. 
-            <b>Note: this could break deployments with very old kernels.</b>
-	<li>Implement automatic interface address advertising with special prefix ::/64.
-	<li>Relax interface naming (e.g. with VLANs) requirements.
-	<li>Fix ordering of route, prefix and RDNSS options (only matters with RDNSS)
+            There is '-s' toggle to keep old behaviour.</li>
+	<li>Fix Linux retrans_timer on old kernels (newer ones have retrans_timer_ms)</li>
+	<li>Fix stderr+syslog (default) logging on non-i386 platforms.</li>
+	<li>Require that interface must be RUNNING instead of just UP.<br/>
+            <b>Note: this could break deployments with very old kernels.</b></li>
+	<li>Implement automatic interface address advertising with special prefix ::/64.</li>
+	<li>Relax interface naming (e.g. with VLANs) requirements.</li>
+	<li>Fix ordering of route, prefix and RDNSS options (only matters with RDNSS)</li>
 </ul>
 
 <p>November 1, 2006 - Version 1.0 updates:</p>
 <ul>
-	<li>Fix AdvDefaultLifetime initalization, broken in 0.9.1.
-	<li>Fix STDERR+syslog logging, don't try STDERR after forking.
-	<li>Implement RDNSS draft with (non-allocated) ND type code 25.
+	<li>Fix AdvDefaultLifetime initalization, broken in 0.9.1.</li>
+	<li>Fix STDERR+syslog logging, don't try STDERR after forking.</li>
+	<li>Implement RDNSS draft with (non-allocated) ND type code 25.</li>
 	<li>Redefined IgnoreIfMissing: failed interfaces are now
-reinitialized by default.  IgnoreIfMissing only omits warnings about these.
-	<li>Unblock SIGALRM at startup.
-	<li>Implement MAX_INITIAL_RTR_ADVERT_INTERVAL handling.
+reinitialized by default.  IgnoreIfMissing only omits warnings about these.</li>
+	<li>Unblock SIGALRM at startup.</li>
+	<li>Implement MAX_INITIAL_RTR_ADVERT_INTERVAL handling.</li>
 	<li>Perform some dynamic/static code audit, fix some minor bugs and
-do cleanup as a result.
+do cleanup as a result.</li>
 </ul>
 
 <p>January 13, 2006 - Version 0.9.1 updates:</p>
 <ul>
-  <li>Clean up signed/unsigned values, add more warnings to CFLAGS
+  <li>Clean up signed/unsigned values, add more warnings to CFLAGS</li>
   <li>Fix a couple of  IPv6 Ready Logo Phase-2 IPv6 Core
-                  Protocols Self Test issues
-  <li>Create a short FAQ in README file, other minor documentation updates
+                  Protocols Self Test issues</li>
+  <li>Create a short FAQ in README file, other minor documentation updates</li>
   <li>Get interface MTU automatically, so that you can
-                  use jumboframes and advertise MTU >1500
+                  use jumboframes and advertise MTU >1500</li>
 </ul>
 
 <p>October 19, 2005 - Version 0.9 updates:</p>
 <ul>
-  <li>radvdump cleaned up, only config-file syntax supported
+  <li>radvdump cleaned up, only config-file syntax supported</li>
    <li>add NEMO Basic support (RFC3961) and fix default
-        HomeAgentLifetime
-  <li>more robust timer handler in case the kernel is buggy
+        HomeAgentLifetime</li>
+  <li>more robust timer handler in case the kernel is buggy</li>
   <li>new default logging method "stderr_syslog";
                 Everything is logged on syslog, but the most important messages
-    (i.e., start-up failures) are also logged on stderr.
+    (i.e., start-up failures) are also logged on stderr.</li>
 </ul>
 
 <p>July 8, 2005 - Version 0.8 updates:</p>
 <ul>
-	<li>More specific route codepoint has been changed to the official value, 24.
+	<li>More specific route codepoint has been changed to the official value, 24.</li>
 	<li>Fix incorrect calculation of the 6to4 prefix on big-endian
-architectures.
+architectures.</li>
 	<li>Fix a multicast join issue with HUP signal on newer 2.6.12+
-Linux kernels.
-	<li>Merge some MIPv6 and non-MIPv6 code, improve error messages.
-	<li>Improve slightly the error messages from config file parsing.
+Linux kernels.</li>
+	<li>Merge some MIPv6 and non-MIPv6 code, improve error messages.</li>
+	<li>Improve slightly the error messages from config file parsing.</li>
 </ul>
 
 <p>February 21, 2005 - Version 0.7.3 updates:</p>
 <ul>
-    <li>A large number of fixes and cleanups
-    <li>Support Router Preferences and More Specific routes
+    <li>A large number of fixes and cleanups</li>
+    <li>Support Router Preferences and More Specific routes</li>
     <li>Add "IgnoreIfMissing" interface flag, to be used with
-interfaces which may become available only later on 
+interfaces which may become available only later on </li>
 </ul>
 
 
 <p>October 28, 2002 - Version 0.7.2 updates:</p>
 <ul>
-                 <li>add support for VLANs (from USAGI)
-                 <li>make it compile better on newer NetBSD's (NetBSD)
-                 <li>fix a syntax error in radvd.conf(5) sample documentation
+                 <li>add support for VLANs (from USAGI)</li>
+                 <li>make it compile better on newer NetBSD's (NetBSD)</li>
+                 <li>fix a syntax error in radvd.conf(5) sample documentation</li>
                  <li>use IPV6_RECV{HOPLIMIT,PKTINFO} not 
-                       IPV6_{HOPLIMIT,PKTINFO} if supported
-                 <li>(in Red Hat spec file) don't create radvd gid explicitly
-                 <li>a lot of coding style cleanups
+                       IPV6_{HOPLIMIT,PKTINFO} if supported</li>
+                 <li>(in Red Hat spec file) don't create radvd gid explicitly</li>
+                 <li>a lot of coding style cleanups</li>
 </ul>
 
 <p>January 16, 2002 - Version 0.7.1 updates:</p>
 
 <ul>
-<li>Check that forwarding is enabled when starting radvd (helps avoid odd problems)
-<li>Check configuration file permissions (note: in setuid operation, must not be writable by the user.group)
-<li>Cleanups and enhancements for radvdump
+<li>Check that forwarding is enabled when starting radvd (helps avoid odd problems)</li>
+<li>Check configuration file permissions (note: in setuid operation, must not be writable by the user.group)</li>
+<li>Cleanups and enhancements for radvdump</li>
 <li>Ensure NULL-termination with strncpy even with overlong strings (non-criticals, but better safe than 
-sorry)
-<li>Update config.{guess,sub} to cope with some newer architectures
-<li>Minor fixes and cleanups
+sorry)</li>
+<li>Update config.{guess,sub} to cope with some newer architectures</li>
+<li>Minor fixes and cleanups</li>
 </ul>
 
 
@@ -288,10 +296,14 @@ rather than at the next advertisement. (from Nathan Lutchansky)</li>
 <li>Configuration parser grammar cleanup. (from Nathan Lutchansky)</li>
 </ul>
 
-<hr>
-
+<hr/>
+<p>
 <a href="http://6bone.informatik.uni-leipzig.de/ipv6/stats/stats.php3">
-<img src="http://6bone.informatik.uni-leipzig.de/ipv6/stats/log.php3?URL=www.litech.org"></a><br>
-Last modified 2011-1-12 by reubenhwk.
+<img alt="IPv6" src="http://6bone.informatik.uni-leipzig.de/ipv6/stats/log.php3?URL=www.litech.org"/></a>
+<a href="http://validator.w3.org/check?uri=referer"><img
+   src="http://www.w3.org/Icons/valid-xhtml10"
+   alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a>
+</p>
+<p>Last modified 2011-1-12 by reubenhwk.</p>
 </body>
 </html>
