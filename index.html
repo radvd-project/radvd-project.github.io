@@ -35,20 +35,15 @@ of these if you are interested in radvd.</p>
 
 <h3>Latest Update(s)</h3>
 
-<p>Jan 12, 2011 - Version 1.7 updates:</p>
+<p>May 14, 2011 - Version 1.8 updates:</p>
 <ul>
-<li>Fix radvd skipping multiple interfaces when
-                UnicastOnly is on or AdvSendAdvert is off.
-                This got broken in radvd 1.3. Patch from Cedric BAIL.</li>
-<li>Fix a segmentation fault on reload_config() timer list
-                corruption that only occurs with multiple interfaces.</li>
-<li>Add '-c' flag to test configuration.</li>
-<li>Deprecate old, pre-RFC5006 parameters.
-                Support RFC6106 by adding DNS Search List support.
-                From Pierre Ossman.</li>
-<li>AdvSourceLLAddress fixed on FreeBSD when link
-                layer token length is zero.</li>
-<li>Welcome new co-maintainer: Reuben Hawkins</li>
+<li>IgnoreIfMissing now defaults to on</li>
+<li>Timer code replaced with poll</li>
+<li>radvd now listens for interface state changes on a netlink socket</li>
+<li>DecrementLifetimes</li>
+<li>DeprecatePrefix</li>
+<li>FlushRoute</li>
+<li>BugFix in DNSSL parsing</li>
 </ul>
 
 
@@ -60,11 +55,10 @@ of these if you are interested in radvd.</p>
 their distributions.  Please check with your vendor before downloading a
 package from here.</p>
 
-<p>Source for radvd is available as a gzipped tar file and source RPM. SHA1 hashes are also listed below.</p>
+<p>Source for radvd is available as a gzipped tar file. SHA1 hash is also listed below.</p>
 
 <ul>
- <li><a href="dist/radvd-1.7.tar.gz">radvd-1.7.tar.gz</a> (3a41fa681c409160eb767d60cbb8038f84b3f8af)</li>
- <li><a href="dist/radvd-1.7-1.src.rpm">radvd-1.7-1.src.rpm</a> (b49012accc931a003e72dd59d638d93f83a340e0)</li>
+ <li><a href="dist/radvd-1.8.tar.gz">radvd-1.8.tar.gz</a> (56d76a9c88ffd58bfa3c853cb26dd85cebcff5f1)</li>
 </ul>
 
 <p><a href="dist/">Older versions</a> of radvd are still available.</p>
@@ -101,6 +95,22 @@ mailing list.  Please consider contributing bugfixes and improvements
 back to the project.</p>
 
 <h3>Older update information</h3>
+
+<p>Jan 12, 2011 - Version 1.7 updates:</p>
+<ul>
+<li>Fix radvd skipping multiple interfaces when
+                UnicastOnly is on or AdvSendAdvert is off.
+                This got broken in radvd 1.3. Patch from Cedric BAIL.</li>
+<li>Fix a segmentation fault on reload_config() timer list
+                corruption that only occurs with multiple interfaces.</li>
+<li>Add '-c' flag to test configuration.</li>
+<li>Deprecate old, pre-RFC5006 parameters.
+                Support RFC6106 by adding DNS Search List support.
+                From Pierre Ossman.</li>
+<li>AdvSourceLLAddress fixed on FreeBSD when link
+                layer token length is zero.</li>
+<li>Welcome new co-maintainer: Reuben Hawkins</li>
+</ul>
 
 <p>March 5, 2010 - Version 1.6 updates:</p>
 <ul>
