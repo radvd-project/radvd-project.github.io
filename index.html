@@ -35,19 +35,15 @@ of these if you are interested in radvd.</p>
 
 <h3>Latest Update(s)</h3>
 
-<p>May 14, 2011 - Version 1.8 updates:</p>
+<p>Aug 22, 2011 - Version 1.8.1 updates:</p>
 <ul>
-<li>IgnoreIfMissing now defaults to on</li>
-<li>Timer code replaced with poll</li>
-<li>radvd now listens for interface state changes on a netlink socket</li>
-<li>DecrementLifetimes</li>
-<li>DeprecatePrefix</li>
-<li>FlushRoute</li>
-<li>BugFix in DNSSL parsing</li>
+<li>Patch for cross compiling on uClibc</li>
+<li>Minor fixes to debug logging.</li>
 </ul>
 
-
-<p>Update information for older releases is near the bottom of this page.</p>
+<a href="#Older update information">
+<p>For Update information on older releases click here.</p>
+</a>
 
 <h3>Download</h3>
 
@@ -58,19 +54,22 @@ package from here.</p>
 <p>Source for radvd is available as a gzipped tar file. SHA1 hash is also listed below.</p>
 
 <ul>
- <li><a href="dist/radvd-1.8.tar.gz">radvd-1.8.tar.gz</a> (56d76a9c88ffd58bfa3c853cb26dd85cebcff5f1)</li>
+ <li><a href="dist/radvd-1.8.1.tar.gz">radvd-1.8.1.tar.gz</a> (c7e8ac6222099c62519b9893f833440037352971)</li>
 </ul>
 
 <p><a href="dist/">Older versions</a> of radvd are still available.</p>
 
 <h3>Development Information</h3>
 
-<p>We encourage you to help with radvd development!  The CVS repository
+<p>We encourage you to help with radvd development!  The repository
 for radvd is available to anybody in several formats:</p>
 
 <ul>
 
-<li>Access for casual browsing is easiest through <a
+<li>GIT access is available at <a href="https://github.com/reubenhwk/radvd">https://github.com/reubenhwk/radvd</a></li>
+<p>git clone git@github.com:reubenhwk/radvdweb.git</p>
+<p>The GIT repository is generated with git cvsimport.  The main repository remains in CVS, but the majority of patches are already generated from GIT.  Eventually, the main CVS repository will be migrated to GIT.</p>
+<li>Access for casual CVS browsing through <a
 href="http://cvs.litech.org/radvd/">CVSweb</a>.</li>
 
 <li>Check out a working copy of radvd with anonymous CVS:
@@ -94,7 +93,21 @@ href="http://cvs.litech.org/radvd/">CVSweb</a>.</li>
 mailing list.  Please consider contributing bugfixes and improvements
 back to the project.</p>
 
+<a name="Older update information">
 <h3>Older update information</h3>
+</a>
+
+<p>May 14, 2011 - Version 1.8 updates:</p>
+<ul>
+<li>IgnoreIfMissing now defaults to on</li>
+<li>Timer code replaced with poll</li>
+<li>radvd now listens for interface state changes on a netlink socket</li>
+<li>DecrementLifetimes</li>
+<li>DeprecatePrefix</li>
+<li>FlushRoute</li>
+<li>BugFix in DNSSL parsing</li>
+</ul>
+
 
 <p>Jan 12, 2011 - Version 1.7 updates:</p>
 <ul>
@@ -111,6 +124,7 @@ back to the project.</p>
                 layer token length is zero.</li>
 <li>Welcome new co-maintainer: Reuben Hawkins</li>
 </ul>
+
 
 <p>March 5, 2010 - Version 1.6 updates:</p>
 <ul>
