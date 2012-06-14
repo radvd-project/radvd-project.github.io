@@ -16,9 +16,7 @@ specified by <a href="http://www.faqs.org/rfcs/rfc2461.html">RFC
 node sending a Router Solicitation message.  These messages are required
 for IPv6 stateless autoconfiguration.</p>
 
-<p>This release includes support for Mobile IPv6, 6to4 addressing, router
-preferences and more specific routes, and
-non-broadcast multiple-access links such as ISATAP.  Both Linux and BSD
+<p>Both Linux and BSD
 are supported.  For more information about recent modifications, please
 see the <a href="CHANGES">CHANGES file</a> included with the
 latest release of radvd.</p>
@@ -35,9 +33,12 @@ of these if you are interested in radvd.</p>
 
 <h2>Latest Release</h2>
 
-<p>Jan 26, 2011 - Version 1.8.5 updates:</p>
+
+<p>June 14, 2011 - Version 1.9 updates:</p>
 <ul>
-<li>corrects the PID stored in the PID file</li>
+<li>Using <a href="http://0pointer.de/lennart/projects/libdaemon/">libdaemon</a> to deamonize and store PID file</li>
+<li>setsockopt NETLINK_NO_ENOBUFS</li>
+<li>fixed bug <a href="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=634485">debian bug 634485</a></li>
 </ul>
 
 <h3>Download</h3>
@@ -49,7 +50,7 @@ package from here.</p>
 <p>Source for radvd is available as a gzipped tar file. SHA1 hash is also listed below.</p>
 
 <ul>
-<li><a href="dist/radvd-1.8.5.tar.gz">radvd-1.8.5.tar.gz</a> (344c145bd29938b7eefb0210cf92bf18df3e191d)</li>
+<li><a href="dist/radvd-1.9.tar.gz">radvd-1.9.tar.gz</a> (2dc2f925fb4f365cf9aa14107e0544f74d052401)</li>
 </ul>
 
 <p><a href="dist/">Older versions</a> of radvd are still available.</p>
@@ -59,20 +60,19 @@ For Update information on older releases click here.
 </a>
 </p>
 
-
+<!--
 <h2>Latest Development Update(s)</h2>
 
-<p>June 7, 2011 - Version 1.9rc1 updates:</p>
+<p>date - version updates:</p>
 <ul>
-<li>Using <a href="http://0pointer.de/lennart/projects/libdaemon/">libdaemon</a> to deamonize and store PID file</li>
-<li>setsockopt NETLINK_NO_ENOBUFS</li>
-<li>fixed bug <a href="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=634485">debian bug 634485</a></li>
+<li></li>
 </ul>
 
 <h3>Download</h3>
 <ul>
-<li><a href="dist/radvd-1.9rc1.tar.gz">radvd-1.9rca.tar.gz</a> (56d8ba2d620ca9ff500e05b8e25133128554436a)</li>
+<li><a href="dist/radvd-.tar.gz">radvd-.tar.gz</a> ()
 </ul>
+-->
 
 <h3>Development Information</h3>
 
@@ -95,6 +95,13 @@ back to the project.</p>
 Older update information
 </a>
 </h2>
+
+
+<p>Jan 26, 2011 - Version 1.8.5 updates:</p>
+<ul>
+<li>corrects the PID stored in the PID file</li>
+</ul>
+
 
 <p>Jan 20, 2011 - Version 1.8.4 updates:</p>
 <ul>
