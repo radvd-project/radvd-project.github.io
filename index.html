@@ -17,9 +17,7 @@ node sending a Router Solicitation message.  These messages are required
 for IPv6 stateless autoconfiguration.</p>
 
 <p>Both Linux and BSD
-are supported.  For more information about recent modifications, please
-see the <a href="CHANGES">CHANGES file</a> included with the
-latest release of radvd.</p>
+are supported.</p>
 
 <h3>Mailing Lists</h3>
 
@@ -31,12 +29,17 @@ The first list is for announcements of new radvd releases, and the second
 list is for discussion of radvd development. Please subscribe to one or both
 of these if you are interested in radvd.</p>
 
+<hr/>
+
 <h2>Latest Stable Release</h2>
 
 <p>Jan 10, 2014 - Version 1.9.8 updates:</p>
 <ul>
 <li>setting -no-strict-aliasing in CFLAGS</li>
 </ul>
+
+<p>For more information about recent modifications, please
+see the <a href="CHANGES">CHANGES</a> file.</p>
 
 <h3>Download</h3>
 
@@ -64,9 +67,10 @@ of these if you are interested in radvd.</p>
 </li>
 </ul>
 
+<hr/>
 <h2>Latest Development Release</h2>
 
-<p>Jan 18, 2014 - Version 2.0.0-alpha2 updates:</p>
+<p>Feb 1, 2014 - Version 2.0.0-alpha3 updates:</p>
 <ul>
 <li>make check target</li>
 <li>parser can run without root</li>
@@ -75,36 +79,38 @@ of these if you are interested in radvd.</p>
 <li>PIDs embedded in logging</li>
 <li>stricter interface initialization</li>
 <li>flesh out some netlink code to handle RTM_NEWADDR</li>
+<li>replaced global IfaceList with an iface collection ADT</li>
 <li>code cleanup, simplification and factoring</li>
 </ul>
 
-<h3>Download</h3>
+<p>For more information about recent modifications, please
+see the <a href="CHANGES-2">CHANGES</a> file.</p>
 
+<h3>Download</h3>
 
 <ul>
 <li>
-<a href="dist/radvd-2.0.0-alpha2.tar.gz">radvd-2.0.0-alpha2.tar.gz</a>
-<a href="dist/radvd-2.0.0-alpha2.tar.gz.md5">[md5]</a>
-<a href="dist/radvd-2.0.0-alpha2.tar.gz.sha1">[sha1]</a>
-<a href="dist/radvd-2.0.0-alpha2.tar.gz.sha256">[sha256]</a>
-<a href="dist/radvd-2.0.0-alpha2.tar.gz.asc">[GPG]</a>
+<a href="dist/radvd-2.0.0-alpha3.tar.gz">radvd-2.0.0-alpha3.tar.gz</a>
+<a href="dist/radvd-2.0.0-alpha3.tar.gz.md5">[md5]</a>
+<a href="dist/radvd-2.0.0-alpha3.tar.gz.sha1">[sha1]</a>
+<a href="dist/radvd-2.0.0-alpha3.tar.gz.sha256">[sha256]</a>
+<a href="dist/radvd-2.0.0-alpha3.tar.gz.asc">[GPG]</a>
 </li>
 <li>
-<a href="dist/radvd-2.0.0-alpha2.tar.bz2">radvd-2.0.0-alpha2.tar.bz2</a>
-<a href="dist/radvd-2.0.0-alpha2.tar.bz2.md5">[md5]</a>
-<a href="dist/radvd-2.0.0-alpha2.tar.bz2.sha1">[sha1]</a>
-<a href="dist/radvd-2.0.0-alpha2.tar.bz2.sha256">[sha256]</a>
-<a href="dist/radvd-2.0.0-alpha2.tar.bz2.asc">[GPG]</a>
+<a href="dist/radvd-2.0.0-alpha3.tar.bz2">radvd-2.0.0-alpha3.tar.bz2</a>
+<a href="dist/radvd-2.0.0-alpha3.tar.bz2.md5">[md5]</a>
+<a href="dist/radvd-2.0.0-alpha3.tar.bz2.sha1">[sha1]</a>
+<a href="dist/radvd-2.0.0-alpha3.tar.bz2.sha256">[sha256]</a>
+<a href="dist/radvd-2.0.0-alpha3.tar.bz2.asc">[GPG]</a>
 </li>
 <li>
-<a href="dist/radvd-2.0.0-alpha2.tar.xz">radvd-2.0.0-alpha2.tar.xz</a>
-<a href="dist/radvd-2.0.0-alpha2.tar.xz.md5">[md5]</a>
-<a href="dist/radvd-2.0.0-alpha2.tar.xz.sha1">[sha1]</a>
-<a href="dist/radvd-2.0.0-alpha2.tar.xz.sha256">[sha256]</a>
-<a href="dist/radvd-2.0.0-alpha2.tar.xz.asc">[GPG]</a>
+<a href="dist/radvd-2.0.0-alpha3.tar.xz">radvd-2.0.0-alpha3.tar.xz</a>
+<a href="dist/radvd-2.0.0-alpha3.tar.xz.md5">[md5]</a>
+<a href="dist/radvd-2.0.0-alpha3.tar.xz.sha1">[sha1]</a>
+<a href="dist/radvd-2.0.0-alpha3.tar.xz.sha256">[sha256]</a>
+<a href="dist/radvd-2.0.0-alpha3.tar.xz.asc">[GPG]</a>
 </li>
 </ul>
-
 
 <p><a href="dist/">Older versions</a> of radvd are still available.</p>
 <p>
@@ -113,6 +119,7 @@ For Update information on older releases click here.
 </a>
 </p>
 
+<hr/>
 <h3>Development Information</h3>
 
 <p>We encourage you to help with radvd development!  The repository
@@ -129,6 +136,7 @@ for radvd is available to anybody via github.</p>
 mailing list.  Please consider contributing bug fixes and improvements
 back to the project.</p>
 
+<hr/>
 <h2>
 <a name="OlderUpdateInformation">
 Older update information
