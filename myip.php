@@ -1,3 +1,3 @@
 <?php
-print $_SERVER['REMOTE_ADDR'];
+echo $_SERVER['REMOTE_ADDR'], PHP_EOL;
 ?>
