@@ -1,4 +1,4 @@
-2014/02/17	2.0.0-alpha3
+2014/02/17	2.0.0-alpha4
 		Cleaned up Makefile.am
 		added fstack-protector for security
 		fixed CFLAGS warning settings
