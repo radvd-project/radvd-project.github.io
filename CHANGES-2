@@ -1,3 +1,12 @@
+2014/03/07	2.0.0-alpha5
+		log valid and preferred lifetimes
+		clean up sllao code and test
+
+2014/03/05	6lowpan support <Bhadram>
+		using ppoll to prevent signal races
+
+2014/02/28	Bug fix 1048653 - UnicastOnly option still sends multicast RA
+
 2014/02/17	2.0.0-alpha4
 		Cleaned up Makefile.am
 		added fstack-protector for security
@@ -5,7 +14,7 @@
 		fixed problems in code raised by CFLAGS fix
 
 2014/02/01	2.0.0-alpha3
-		fixed some tests which envoked radvd instead of ./radvd
+		fixed some tests which invoked radvd instead of ./radvd
 		added an iface api which hides the linked list implementation
 		added a sorted list (by iface index) to the iface api
 		make globals in gram.y non-global
