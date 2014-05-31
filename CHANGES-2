@@ -1,3 +1,11 @@
+2014/05/30	replace radvd.conf with radvd.d/*.conf where each interface
+			has an entry (example, eth0.conf, eth1.conf, etc)
+		add disable_ipv6_autoconfig function so an interface radvd
+			is using won't autoconfig itself using its own advert
+		improved netlink message processing to *only* reinit an
+			interface that changed.
+		2.0.0-alpha7
+
 2014/04/10	2.0.0-alpha6
 		format string checks
 
