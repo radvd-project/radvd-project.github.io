@@ -32,35 +32,32 @@ of these if you are interested in radvd.</p>
 
 <h2>Latest Release</h2>
 
-<p>Feb 25, 2019 - Version 2.18 updates:</p>
+<p>Sep 23, 2020 - Version 2.19 updates:</p>
 <ul>
-<li>Fix double-free scenario in case if duplicate interface was specified</li>
-<li>Separate systemd and SysV packaging</li>
-<li>Update fedora packaging files</li>
-<li>No router advertisements on tunnel interfaces</li>
-<li>Add nodaemon option to the manpage</li>
-<li>Write to stderr in non-daemonized mode</li>
-<li>Fixes memory leak in add_ra_options_dnssl</li>
-<li>Allow quoted strings in config.</li>
-<li>nd_opt_6co endianness fix</li>
-</ul>
+<li>Add PPC64LE support</li>
+<li>Update PidFile path to avoid system warnings</li>
+<li>Fix segfault  because of accessing  NULL pointer</li>
+<li>Allow building on musl</li>
+<li>Crash on SIGHUP when config file removed.</li>
+<li>Don't force -fstack-protector, the toolchain might lack support for it</li>
+<li>fix wrong assignment of struct msghdr</li>
+<li>Change location of tmpfiles to /run to avoid warnings</li>
+</lu>
 
 <h3>Download</h3>
 
 <ul>
 <li>
-<a href="dist/radvd-2.18.tar.gz">radvd-2.18.tar.gz</a>
-<a href="dist/radvd-2.18.tar.gz.sha1">[sha1]</a>
-<a href="dist/radvd-2.18.tar.gz.sha256">[sha256]</a>
-<a href="dist/radvd-2.18.tar.gz.sha512">[sha512]</a>
-<a href="dist/radvd-2.18.tar.gz.asc">[GPG]</a>
+<a href="dist/radvd-2.19.tar.gz">radvd-2.19.tar.gz</a>
+<a href="dist/radvd-2.19.tar.gz.sha1">[sha1]</a>
+<a href="dist/radvd-2.19.tar.gz.sha256">[sha256]</a>
+<a href="dist/radvd-2.19.tar.gz.sha512">[sha512]</a>
 </li>
 <li>
-<a href="dist/radvd-2.18.tar.xz">radvd-2.18.tar.xz</a>
-<a href="dist/radvd-2.18.tar.xz.sha1">[sha1]</a>
-<a href="dist/radvd-2.18.tar.xz.sha256">[sha256]</a>
-<a href="dist/radvd-2.18.tar.xz.sha512">[sha512]</a>
-<a href="dist/radvd-2.18.tar.xz.asc">[GPG]</a>
+<a href="dist/radvd-2.19.tar.xz">radvd-2.19.tar.xz</a>
+<a href="dist/radvd-2.19.tar.xz.sha1">[sha1]</a>
+<a href="dist/radvd-2.19.tar.xz.sha256">[sha256]</a>
+<a href="dist/radvd-2.19.tar.xz.sha512">[sha512]</a>
 </li>
 </ul>
 
@@ -99,6 +96,19 @@ back to the project.</p>
 Older update information
 </a>
 </h2>
+
+<p>Feb 25, 2019 - Version 2.18 updates:</p>
+<ul>
+<li>Fix double-free scenario in case if duplicate interface was specified</li>
+<li>Separate systemd and SysV packaging</li>
+<li>Update fedora packaging files</li>
+<li>No router advertisements on tunnel interfaces</li>
+<li>Add nodaemon option to the manpage</li>
+<li>Write to stderr in non-daemonized mode</li>
+<li>Fixes memory leak in add_ra_options_dnssl</li>
+<li>Allow quoted strings in config.</li>
+<li>nd_opt_6co endianness fix</li>
+</ul>
 
 <p>Jul 3, 2017 - Version 2.17 updates:</p>
 <ul>
