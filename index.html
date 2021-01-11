@@ -2,31 +2,22 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 
 <head>
- <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
- <title>Linux IPv6 Router Advertisement Daemon (radvd)</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>Linux IPv6 Router Advertisement Daemon (radvd)</title>
 </head>
 
 <body>
 <h1 style="text-align: center">Linux IPv6 Router Advertisement Daemon (radvd)</h1>
 
-<p>The router advertisement daemon (radvd) is run by Linux or BSD
-systems acting as IPv6 routers.  It sends Router Advertisement messages,
-specified by <a href="http://www.faqs.org/rfcs/rfc2461.html">RFC
-2461</a>, to a local Ethernet LAN periodically and when requested by a
-node sending a Router Solicitation message.  These messages are required
-for IPv6 stateless autoconfiguration.</p>
+<p>The router advertisement daemon (radvd) is run by Linux or BSD systems acting as IPv6 routers. It sends Router Advertisement messages, specified by <a href="https://tools.ietf.org/html/rfc2461">RFC 2461</a>, to a local Ethernet LAN periodically and when requested by a node sending a Router Solicitation message. These messages are required for IPv6 stateless autoconfiguration.</p>
 
-<p>Linux is supported.  Your mileage may vary on BSD.</p>
+<p>Linux is supported. Your mileage may vary on BSD.</p>
+
+<p>This website is hosted by GitHub Pages, improve it: <a href="https://github.com/radvd-project/radvd-project.github.io">source</a>.</p>
 
 <h3>Mailing Lists</h3>
 
-<p>There are two mailing lists for radvd:
-<a href="http://lists.litech.org/listinfo/radvd-announce-l">radvd-announce-l</a>
-and
-<a href="http://lists.litech.org/listinfo/radvd-devel-l">radvd-devel-l</a>.
-The first list is for announcements of new radvd releases, and the second
-list is for discussion of radvd development. Please subscribe to one or both
-of these if you are interested in radvd.</p>
+<p>There are two mailing lists for radvd: <a href="http://lists.litech.org/listinfo/radvd-announce-l">radvd-announce-l</a> and <a href="http://lists.litech.org/listinfo/radvd-devel-l">radvd-devel-l</a>. The first list is for announcements of new radvd releases, and the second list is for discussion of radvd development. Please subscribe to one or both of these if you are interested in radvd.</p>
 
 <hr/>
 
@@ -34,563 +25,500 @@ of these if you are interested in radvd.</p>
 
 <p>Sep 23, 2020 - Version 2.19 updates:</p>
 <ul>
-<li>Add PPC64LE support</li>
-<li>Update PidFile path to avoid system warnings</li>
-<li>Fix segfault  because of accessing  NULL pointer</li>
-<li>Allow building on musl</li>
-<li>Crash on SIGHUP when config file removed.</li>
-<li>Don't force -fstack-protector, the toolchain might lack support for it</li>
-<li>fix wrong assignment of struct msghdr</li>
-<li>Change location of tmpfiles to /run to avoid warnings</li>
-</lu>
+    <li>Add PPC64LE support</li>
+    <li>Update PidFile path to avoid system warnings</li>
+    <li>Fix segfault because of accessing NULL pointer</li>
+    <li>Allow building on musl</li>
+    <li>Crash on SIGHUP when config file removed.</li>
+    <li>Don't force -fstack-protector, the toolchain might lack support for it</li>
+    <li>fix wrong assignment of struct msghdr</li>
+    <li>Change location of tmpfiles to /run to avoid warnings</li>
+</ul>
 
 <h3>Download</h3>
 
 <ul>
-<li>
-<a href="dist/radvd-2.19.tar.gz">radvd-2.19.tar.gz</a>
-<a href="dist/radvd-2.19.tar.gz.asc">radvd-2.19.tar.gz.asc</a>
-<a href="dist/radvd-2.19.tar.gz.sha1">[sha1]</a>
-<a href="dist/radvd-2.19.tar.gz.sha256">[sha256]</a>
-<a href="dist/radvd-2.19.tar.gz.sha512">[sha512]</a>
-</li>
-<li>
-<a href="dist/radvd-2.19.tar.xz">radvd-2.19.tar.xz</a>
-<a href="dist/radvd-2.19.tar.xz.asc">radvd-2.19.tar.xz.asc</a>
-<a href="dist/radvd-2.19.tar.xz.sha1">[sha1]</a>
-<a href="dist/radvd-2.19.tar.xz.sha256">[sha256]</a>
-<a href="dist/radvd-2.19.tar.xz.sha512">[sha512]</a>
-</li>
+    <li>
+        <a href="dist/radvd-2.19.tar.gz">radvd-2.19.tar.gz</a>
+        <a href="dist/radvd-2.19.tar.gz.asc">radvd-2.19.tar.gz.asc</a>
+        <a href="dist/radvd-2.19.tar.gz.sha1">[sha1]</a>
+        <a href="dist/radvd-2.19.tar.gz.sha256">[sha256]</a>
+        <a href="dist/radvd-2.19.tar.gz.sha512">[sha512]</a>
+    </li>
+    <li>
+        <a href="dist/radvd-2.19.tar.xz">radvd-2.19.tar.xz</a>
+        <a href="dist/radvd-2.19.tar.xz.asc">radvd-2.19.tar.xz.asc</a>
+        <a href="dist/radvd-2.19.tar.xz.sha1">[sha1]</a>
+        <a href="dist/radvd-2.19.tar.xz.sha256">[sha256]</a>
+        <a href="dist/radvd-2.19.tar.xz.sha512">[sha512]</a>
+    </li>
 </ul>
 
-<p>For more information about recent modifications, please
-see the <a href="CHANGES.txt">CHANGES</a> file.</p>
+<p>For more information about recent modifications, please see the <a href="CHANGES">CHANGES</a> file.</p>
 
 <hr/>
 
 <p><a href="dist/">Older versions</a> of radvd are still available.</p>
-<p>
-<a href="#OlderUpdateInformation">
-For Update information on older releases click here.
-</a>
-</p>
+<p><a href="#OlderUpdateInformations">For Update information on older releases click here.</a></p>
 
 <hr/>
-<h3>Development Information</h3>
 
-<p>We encourage you to help with radvd development!  The repository
-for radvd is available to anybody via github.</p>
+<h3>Development Informations</h3>
+
+<p>We encourage you to help with radvd development! The repository for radvd is available to anybody via GitHub.</p>
 
 <ul>
-<li>GIT access is available at <a href="https://github.com/reubenhwk/radvd">https://github.com/reubenhwk/radvd</a></li>
-<li>git clone https://github.com/reubenhwk/radvd.git</li>
+    <li>Git access is available at <a href="https://github.com/radvd-project/radvd">https://github.com/radvd-project/radvd</a></li>
+    <li>git clone https://github.com/radvd-project/radvd.git</li>
 </ul>
 
-
-<p>You may want to discuss development on the 
-<a href="http://lists.litech.org/listinfo/radvd-devel-l">radvd-devel-l</a>
-mailing list.  Please consider contributing bug fixes and improvements
-back to the project.</p>
+<p>You may want to discuss development on the <a href="http://lists.litech.org/listinfo/radvd-devel-l">radvd-devel-l</a> mailing list. Please consider contributing bug fixes and improvements back to the project.</p>
 
 <hr/>
-<h2>
-<a name="OlderUpdateInformation">
-Older update information
-</a>
-</h2>
+
+<h2><a name="OlderUpdateInformations">Older update informations</a></h2>
 
 <p>Feb 25, 2019 - Version 2.18 updates:</p>
 <ul>
-<li>Fix double-free scenario in case if duplicate interface was specified</li>
-<li>Separate systemd and SysV packaging</li>
-<li>Update fedora packaging files</li>
-<li>No router advertisements on tunnel interfaces</li>
-<li>Add nodaemon option to the manpage</li>
-<li>Write to stderr in non-daemonized mode</li>
-<li>Fixes memory leak in add_ra_options_dnssl</li>
-<li>Allow quoted strings in config.</li>
-<li>nd_opt_6co endianness fix</li>
+    <li>Fix double-free scenario in case if duplicate interface was specified</li>
+    <li>Separate systemd and SysV packaging</li>
+    <li>Update fedora packaging files</li>
+    <li>No router advertisements on tunnel interfaces</li>
+    <li>Add nodaemon option to the manpage</li>
+    <li>Write to stderr in non-daemonized mode</li>
+    <li>Fixes memory leak in add_ra_options_dnssl</li>
+    <li>Allow quoted strings in config.</li>
+    <li>nd_opt_6co endianness fix</li>
 </ul>
 
 <p>Jul 3, 2017 - Version 2.17 updates:</p>
 <ul>
-<li>Fix STDERR_SYSLOG log level bug.</li>
-<li>Always close stdout and stderr when daemonizing.</li>
-<li>Implement RFC 7772 Section 5.1.2, 5.1.2, defaulted to on. (Robin H. Johnson)</li>
-<li>Added a new co-maintainer, Robin H. Johnson</li>
+    <li>Fix STDERR_SYSLOG log level bug.</li>
+    <li>Always close stdout and stderr when daemonizing.</li>
+    <li>Implement RFC 7772 Section 5.1.2, 5.1.2, defaulted to on. (Robin H. Johnson)</li>
+    <li>Added a new co-maintainer, Robin H. Johnson</li>
 </ul>
 
 <p>Feb 1, 2017 - Version 2.16 updates:</p>
 <ul>
-<li>Allow selection of RA source address. (Robin H. Johnson)</li>
-<li>Fixed ExecReload in systemd service file (Harald Albrecht)</li>
+    <li>Allow selection of RA source address. (Robin H. Johnson)</li>
+    <li>Fixed ExecReload in systemd service file (Harald Albrecht)</li>
 </ul>
 
 <p>Sep 24, 2016 - Version 2.15 updates:</p>
 <ul>
-<li>Moved auto prefix code from config file parser to send_ra.</li>
-<li>Merged ARPHRD_6LOWPAN netlink query from (Alexander Aring)</li>
-<li>Add systemd service file (Craig Andrews)</li>
+    <li>Moved auto prefix code from config file parser to send_ra.</li>
+    <li>Merged ARPHRD_6LOWPAN netlink query from (Alexander Aring)</li>
+    <li>Add systemd service file (Craig Andrews)</li>
 </ul>
 
 <p>Jul 5, 2016 - Version 2.14 updates:</p>
 <ul>
-<li>Fix bug in netlink message processing</li>
+    <li>Fix bug in netlink message processing</li>
 </ul>
 
 <p>Apr 2, 2016 - Version 2.13 updates:</p>
 <ul>
-<li>Ignore bogus RTM_NEWADDR netlink messages</li>
+    <li>Ignore bogus RTM_NEWADDR netlink messages</li>
 </ul>
 
 <p>Feb 1, 2016 - Version 2.12 updates:</p>
 <ul>
-<li>process.c: fixup ugly overflow check</li>
-<li>radvd.conf.5.man: minor fixup to 'client' option</li>
-<li>radvd.conf.5.man: update abro usage</li>
-<li>gram.y: deprecate abro prefix length</li>
-<li>device-linux.c: IEEE 802.15.4 musl libc fix</li>
-<li>send.c: seconds/miliseconds comparison fix</li>
-<li>send.c: preferred lifetime RFC 4862, 5.5.3 fix</li>
-<li>defaults.h: remaining lifetime RFC 4862 fix</li>
-<li>radvdump: show routes with prefixlen &gt; 64</li>
+    <li>process.c: fixup ugly overflow check</li>
+    <li>radvd.conf.5.man: minor fixup to 'client' option</li>
+    <li>radvd.conf.5.man: update abro usage</li>
+    <li>gram.y: deprecate abro prefix length</li>
+    <li>device-linux.c: IEEE 802.15.4 musl libc fix</li>
+    <li>send.c: seconds/miliseconds comparison fix</li>
+    <li>send.c: preferred lifetime RFC 4862, 5.5.3 fix</li>
+    <li>defaults.h: remaining lifetime RFC 4862 fix</li>
+    <li>radvdump: show routes with prefixlen &gt; 64</li>
 </ul>
 
 <p>Apr 9, 2015 - Version 2.11 updates:</p>
 <ul>
-<li>Added '--with-check' option which defaults to 'no' in configure</li>
+    <li>Added '--with-check' option which defaults to 'no' in configure</li>
 </ul>
 
 <p>Jan 22, 2015 - Version 2.10 updates:</p>
 <ul>
-<li>Revert a change which broke responding to new interfaces</li>
+    <li>Revert a change which broke responding to new interfaces</li>
 </ul>
 
 <p>Dec 31, 2014 - Version 2.9 updates:</p>
 <ul>
-<li>Recognize new interfaces coming up and react immediately (Volker)</li>
-<li>Better checking for sysctl() availability (Alexey)</li>
-<li>Ensure random delay in non-UnicastOnly mode</li>
-<li>Fix deref NULL ptr in Deprecate* code</li>
+    <li>Recognize new interfaces coming up and react immediately (Volker)</li>
+    <li>Better checking for sysctl() availability (Alexey)</li>
+    <li>Ensure random delay in non-UnicastOnly mode</li>
+    <li>Fix deref NULL ptr in Deprecate* code</li>
 </ul>
 
 <p>Oct 6, 2014 - Version 2.8 updates:</p>
 <ul>
-<li>Remove autoconf=0 code.</li>
-<li>Fix memory leak when getting SIGHUP.</li>
+    <li>Remove autoconf=0 code.</li>
+    <li>Fix memory leak when getting SIGHUP.</li>
 </ul>
 
 <p>Sep 10, 2014 - Version 2.7 updates:</p>
 <ul>
-<li>Move privsep after daemonize to avoid doing the same deamonization in privsep.</li>
+    <li>Move privsep after daemonize to avoid doing the same deamonization in privsep.</li>
 </ul>
 
 <p>Sep 3, 2014 - Version 2.6 updates:</p>
 <ul>
-<li>Make sure radvd PID file is written before startup radvd process exits</li>
-<li>Normalize some logging to read like headlines rather than prose English</li>
-<li>Build fixed on FreeBSD</li>
+    <li>Make sure radvd PID file is written before startup radvd process exits</li>
+    <li>Normalize some logging to read like headlines rather than prose English</li>
+    <li>Build fixed on FreeBSD</li>
 </ul>
 
 <p>Aug 4, 2014 - Version 2.5 updates:</p>
 <ul>
-<li>Move disable_autoconf to privsep</li>
-<li>Cleaned up some logging</li>
-<li>Fixed a few memory leaks</li>
+    <li>Move disable_autoconf to privsep</li>
+    <li>Cleaned up some logging</li>
+    <li>Fixed a few memory leaks</li>
 </ul>
 
 <p>Jul 30, 2014 - Version 2.4 updates:</p>
 <ul>
-<li>Add RDNSS test file to DIST_EXTRA</li>
-<li>Enhance make packages target to ensure the packages build</li>
+    <li>Add RDNSS test file to DIST_EXTRA</li>
+    <li>Enhance make packages target to ensure the packages build</li>
 </ul>
 
 <p>Jul 30, 2014 - Version 2.3 updates:</p>
 <ul>
-<li>Fix RDNSS option length</li>
-<li>Fix --test option in check_all</li>
+    <li>Fix RDNSS option length</li>
+    <li>Fix --test option in check_all</li>
 </ul>
 
 <p>Jul 29, 2014 - Version 2.2 updates:</p>
 <ul>
-<li>Fix netlink and setup_iface for down interface coming up</li>
+    <li>Fix netlink and setup_iface for down interface coming up</li>
 </ul>
 
 <p>Jul 20, 2014 - Version 2.1 updates:</p>
 <ul>
-<li>Removed parser locations to maintain byacc support</li>
-<li>added files needed for make check target to DIST_EXTRA</li>
+    <li>Removed parser locations to maintain byacc support</li>
+    <li>added files needed for make check target to DIST_EXTRA</li>
 </ul>
 
 <p>Jul 12, 2014 - Version 2.0 updates:</p>
 <ul>
-<li>parser can run without root</li>
-<li>parser locations</li>
-<li>fewer global variables</li>
-<li>PIDs embedded in logging</li>
-<li>stricter interface initialization</li>
-<li>flesh out some netlink code to handle RTM_NEWADDR</li>
-<li>code cleanup, simplification and factoring</li>
-<li>Makefile.am cleanup and organization</li>
-<li>use -fstack-protector for enhanced security</li>
-<li>6lowpan support</li>
-<li>format string checking in log functions</li>
-<li>Use clock_gettime and monotonic clock</li>
-<li>organize and factor struct Interface and send_ra</li>
-<li>removed libdaemon dependency</li>
-<li>added make check target based on check unit testing framework</li>
+    <li>parser can run without root</li>
+    <li>parser locations</li>
+    <li>fewer global variables</li>
+    <li>PIDs embedded in logging</li>
+    <li>stricter interface initialization</li>
+    <li>flesh out some netlink code to handle RTM_NEWADDR</li>
+    <li>code cleanup, simplification and factoring</li>
+    <li>Makefile.am cleanup and organization</li>
+    <li>use -fstack-protector for enhanced security</li>
+    <li>6lowpan support</li>
+    <li>format string checking in log functions</li>
+    <li>Use clock_gettime and monotonic clock</li>
+    <li>organize and factor struct Interface and send_ra</li>
+    <li>removed libdaemon dependency</li>
+    <li>added make check target based on check unit testing framework</li>
 </ul>
 
 <p>Jun 28, 2014 - Version 1.14 updates:</p>
 <ul>
-<li>add check in configure.ac for clock_gettime (Zacarias)</li>
+    <li>add check in configure.ac for clock_gettime (Zacarias)</li>
 </ul>
 
 <p>Jun 16, 2014 - Version 1.13 updates:</p>
 <ul>
-<li>Use clock_gettime and monotonic clock (Pargmann)</li>
+    <li>Use clock_gettime and monotonic clock (Pargmann)</li>
 </ul>
 
 <p>Jun 4, 2014 - Version 1.12 updates:</p>
 <ul>
-<li>Backport a few code cleanup items from the 2.0 branch</li>
-<li>Add compiler attributes to type check format strings (Rodríguez)</li>
+    <li>Backport a few code cleanup items from the 2.0 branch</li>
+    <li>Add compiler attributes to type check format strings (Rodríguez)</li>
 </ul>
 
 <p>Jun 1, 2014 - Version 2.0 updates:</p>
 <ul>
-<li>Version 1.X branch forks here, master is now 2.X</li>
+    <li>Version 1.X branch forks here, master is now 2.X</li>
 </ul>
 
 <p>Jun 1, 2014 - Version 1.11 updates:</p>
 <ul>
-<li>Add compiler attributes to type check format strings (Rodríguez)</li>
+    <li>Add compiler attributes to type check format strings (Rodríguez)</li>
 </ul>
 
 <p>Mar 18, 2014 - Version 1.10.0 updates:</p>
 <ul>
-<li>6LoWPAN support</li>
+    <li>6LoWPAN support</li>
 </ul>
 
 <p>Jan 10, 2014 - Version 1.9.8 updates:</p>
 <ul>
-<li>setting -no-strict-aliasing in CFLAGS</li>
+    <li>setting -no-strict-aliasing in CFLAGS</li>
 </ul>
 
 <p>September 20, 2013 - Version 1.9.7 updates:</p>
 <ul>
-<li>ioctl bug fix for getting the hardware address and mtu of an interface</li>
+    <li>ioctl bug fix for getting the hardware address and mtu of an interface</li>
 </ul>
 
 <p>September 17, 2013 - Version 1.9.6 updates:</p>
 <ul>
-<li>Check AdvSendAdvert before sending an advertisement</li>
+    <li>Check AdvSendAdvert before sending an advertisement</li>
 </ul>
 
 <p>October 2, 2013 - Version 1.9.5 updates:</p>
 <ul>
-<li>IPv6 forwarding setting should be 1 or 2</li>
-<li>Performance fix in netlink message processing</li>
-<li>fix for kernels with no NETLINK_NO_ENOBUFS defined</li>
-<li>distributing gz, bz2 and xz tarballs</li>
-<li>also distributing md5, sha1, sha256 and gpg signatures</li>
+    <li>IPv6 forwarding setting should be 1 or 2</li>
+    <li>Performance fix in netlink message processing</li>
+    <li>fix for kernels with no NETLINK_NO_ENOBUFS defined</li>
+    <li>distributing gz, bz2 and xz tarballs</li>
+    <li>also distributing md5, sha1, sha256 and gpg signatures</li>
 </ul>
 
 <p>October 1, 2013 - Version 1.9.4 updates:</p>
 <ul>
-<li>IPv6 forwarding setting should be 1 or 2</li>
-<li>Performance fix in netlink message processing</li>
-<li>fix for kernels with no NETLINK_NO_ENOBUFS defined</li>
-<li>distributing gz, bz2 and xz tarballs</li>
-<li>also distributing md5, sha1, sha256 and gpg signatures</li>
+    <li>IPv6 forwarding setting should be 1 or 2</li>
+    <li>Performance fix in netlink message processing</li>
+    <li>fix for kernels with no NETLINK_NO_ENOBUFS defined</li>
+    <li>distributing gz, bz2 and xz tarballs</li>
+    <li>also distributing md5, sha1, sha256 and gpg signatures</li>
 </ul>
 
 <p>March 31, 2013 - Version 1.9.3 updates:</p>
 <ul>
-<li>check for sys/sysctl.h availability</li>
-<li>radvdump fix to interpret MTU and Route</li>
+    <li>check for sys/sysctl.h availability</li>
+    <li>radvdump fix to interpret MTU and Route</li>
 </ul>
 
 <p>November 20, 2012 - Version 1.9.2 updates:</p>
 <ul>
-<li>A few minor Makefile.am fixes</li>
+    <li>A few minor Makefile.am fixes</li>
 </ul>
 
 <p>June 19, 2012 - Version 1.9.1 updates:</p>
 <ul>
-<li>Replacing a '==' in configure with '=' for better shell portability</li>
+    <li>Replacing a '==' in configure with '=' for better shell portability</li>
 </ul>
-
 
 <p>June 14, 2012 - Version 1.9 updates:</p>
 <ul>
-<li>Using <a href="http://0pointer.de/lennart/projects/libdaemon/">libdaemon</a> to deamonize and store PID file</li>
-<li>setsockopt NETLINK_NO_ENOBUFS</li>
-<li>fixed bug <a href="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=634485">debian bug 634485</a></li>
+    <li>Using <a href="http://0pointer.de/lennart/projects/libdaemon/">libdaemon</a> to deamonize and store PID file</li>
+    <li>setsockopt NETLINK_NO_ENOBUFS</li>
+    <li>fixed bug <a href="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=634485">debian bug 634485</a></li>
 </ul>
-
 
 <p>Jan 26, 2012 - Version 1.8.5 updates:</p>
 <ul>
-<li>corrects the PID stored in the PID file</li>
+    <li>corrects the PID stored in the PID file</li>
 </ul>
-
 
 <p>Jan 20, 2012 - Version 1.8.4 updates:</p>
 <ul>
-<li>Fixes in privsep on linux</li>
-<li>privsep is now the default and only code path</li>
-<li>added --nodaemon option</li>
+    <li>Fixes in privsep on linux</li>
+    <li>privsep is now the default and only code path</li>
+    <li>added --nodaemon option</li>
 </ul>
-
 
 <p>Oct 14, 2011 - Version 1.8.3 updates:</p>
 <ul>
-<li>proper tracking of buffer usage in send_ra</li>
+    <li>proper tracking of buffer usage in send_ra</li>
 </ul>
-
 
 <p>Oct 6, 2011 - Version 1.8.2 updates:</p>
 <ul>
-<li>Security fixes by Vasiliy Kulikov</li>
+    <li>Security fixes by Vasiliy Kulikov</li>
 </ul>
 
 <p>Aug 22, 2011 - Version 1.8.1 updates:</p>
 <ul>
-<li>Patch for cross compiling on uClibc</li>
-<li>Minor fixes to debug logging.</li>
+    <li>Patch for cross compiling on uClibc</li>
+    <li>Minor fixes to debug logging.</li>
 </ul>
 
 <p>May 14, 2011 - Version 1.8 updates:</p>
 <ul>
-<li>IgnoreIfMissing now defaults to on</li>
-<li>Timer code replaced with poll</li>
-<li>radvd now listens for interface state changes on a netlink socket</li>
-<li>DecrementLifetimes</li>
-<li>DeprecatePrefix</li>
-<li>FlushRoute</li>
-<li>BugFix in DNSSL parsing</li>
+    <li>IgnoreIfMissing now defaults to on</li>
+    <li>Timer code replaced with poll</li>
+    <li>radvd now listens for interface state changes on a netlink socket</li>
+    <li>DecrementLifetimes</li>
+    <li>DeprecatePrefix</li>
+    <li>FlushRoute</li>
+    <li>BugFix in DNSSL parsing</li>
 </ul>
-
 
 <p>Jan 12, 2011 - Version 1.7 updates:</p>
 <ul>
-<li>Fix radvd skipping multiple interfaces when
-                UnicastOnly is on or AdvSendAdvert is off.
-                This got broken in radvd 1.3. Patch from Cedric BAIL.</li>
-<li>Fix a segmentation fault on reload_config() timer list
-                corruption that only occurs with multiple interfaces.</li>
-<li>Add '-c' flag to test configuration.</li>
-<li>Deprecate old, pre-RFC5006 parameters.
-                Support RFC6106 by adding DNS Search List support.
-                From Pierre Ossman.</li>
-<li>AdvSourceLLAddress fixed on FreeBSD when link
-                layer token length is zero.</li>
-<li>Welcome new co-maintainer: Reuben Hawkins</li>
+    <li>Fix radvd skipping multiple interfaces when UnicastOnly is on or AdvSendAdvert is off. This got broken in radvd 1.3. Patch from Cedric BAIL.</li>
+    <li>Fix a segmentation fault on reload_config() timer list corruption that only occurs with multiple interfaces.</li>
+    <li>Add '-c' flag to test configuration.</li>
+    <li>Deprecate old, pre-RFC5006 parameters. Support RFC6106 by adding DNS Search List support. From Pierre Ossman.</li>
+    <li>AdvSourceLLAddress fixed on FreeBSD when link layer token length is zero.</li>
+    <li>Welcome new co-maintainer: Reuben Hawkins</li>
 </ul>
-
 
 <p>March 5, 2010 - Version 1.6 updates:</p>
 <ul>
-	<li>Decrease MSG_SIZE from 4096 to about 1500B. Send buffer uses a smaller size in order to avoid sending out fragmented packets, yet being able to receive full-size frames.</li>
-	<li>Keep track of buffer size and exit if the number of prefixes/routes/etc. would grow too much. Prevent a memory corruption due to wrong memset. Patches from Jan Gorig, Red Hat bug #554125.</li>
-	<li>On BSD use getifaddrs() also in setup_deviceinfo(), fixes a multiple interfaces problem on NetBSD 5 due to change in data structures. Patch from Michael Stapelberg.</li>
-        <li>Allow radvd.conf prefix, clients, route, and RDNSS options to be in any order.  Patch from Michael Stapelberg.</li>
+    <li>Decrease MSG_SIZE from 4096 to about 1500B. Send buffer uses a smaller size in order to avoid sending out fragmented packets, yet being able to receive full-size frames.</li>
+    <li>Keep track of buffer size and exit if the number of prefixes/routes/etc. would grow too much. Prevent a memory corruption due to wrong memset. Patches from Jan Gorig, Red Hat bug #554125.</li>
+    <li>On BSD use getifaddrs() also in setup_deviceinfo(), fixes a multiple interfaces problem on NetBSD 5 due to change in data structures. Patch from Michael Stapelberg.</li>
+    <li>Allow radvd.conf prefix, clients, route, and RDNSS options to be in any order.  Patch from Michael Stapelberg.</li>
 </ul>
-
 
 <p>September 10, 2009 - Version 1.5 updates:</p>
 <ul>
-	<li>Fix infinite loop/segmentation fault problems when cable
-		plugged out/plugged back in, caused by reload_config()
-				and subsequent timer list corruption. </li>
-	<li>Fix IgnoreIfMissing when cable is unplugged at startup.
-		Radvd would keep skipping the interface.</li>
-	<li>Fix parallel make.				</li>
+    <li>Fix infinite loop/segmentation fault problems when cable plugged out/plugged back in, caused by reload_config() and subsequent timer list corruption. </li>
+    <li>Fix IgnoreIfMissing when cable is unplugged at startup. Radvd would keep skipping the interface.</li>
+    <li>Fix parallel make.</li>
 </ul>
 
 <p>August 3, 2009 - Version 1.4 updates:</p>
 <ul>
-	<li>Fix an unintentional change in 1.3: RAs were accidentally often
-	unicast to solicitors instead of being multicast.  This is still
-	compliant with the specification but is not optimal.</li>
+    <li>Fix an unintentional change in 1.3: RAs were accidentally often unicast to solicitors instead of being multicast. This is still compliant with the specification but is not optimal.</li>
 </ul>
 
 <p>July 7, 2009 - Version 1.3 updates:</p>
 <ul>
-	<li>Add a "clients" directive which can be used to specify the clients
-to which radvd will unicast RAs and ignore RSs from every other client. 
-Possibly useful in gradual rollouts.</li>
-	<li>Work around Linux IPV6_RECVPKTINFO|IPV6_RECVHOPLIMIT renumbering
-issues with some combinations of glibc and kernel (e.g. OpenWrt and Freetz
-projects)</li>
-	<li>Use getifaddrs() on BSD instead of ioctl; work around unaligned
-traps on Alpha; Make NetBSD 5 compile.</li>
+    <li>Add a "clients" directive which can be used to specify the clients to which radvd will unicast RAs and ignore RSs from every other client. Possibly useful in gradual rollouts.</li>
+    <li>Work around Linux IPV6_RECVPKTINFO|IPV6_RECVHOPLIMIT renumbering issues with some combinations of glibc and kernel (e.g. OpenWrt and Freetz projects)</li>
+    <li>Use getifaddrs() on BSD instead of ioctl; work around unaligned traps on Alpha; Make NetBSD 5 compile.</li>
 </ul>
+
 <p>October 28, 2008 - Version 1.2 updates:</p>
 <ul>
-	<li>Accept virtually any kind of interface naming convention.</li>
-	<li>If stale radvd.pid exists, try to overwrite it unless the specified PID exists.</li>
-	<li>Define _GNU_SOURCE to fix compilation with glibc >= 2.8.</li>
-	<li>Remove -Wconversion from default CFLAGS due to bogus warnings, fix some real warnings.</li>
-	<li>Decrease the default preferred lifetimes from 30/1 days to 1d/4h.</li>
+    <li>Accept virtually any kind of interface naming convention.</li>
+    <li>If stale radvd.pid exists, try to overwrite it unless the specified PID exists.</li>
+    <li>Define _GNU_SOURCE to fix compilation with glibc >= 2.8.</li>
+    <li>Remove -Wconversion from default CFLAGS due to bogus warnings, fix some real warnings.</li>
+    <li>Decrease the default preferred lifetimes from 30/1 days to 1d/4h.</li>
 </ul>
 
 <p>February 4, 2008 - Version 1.1 updates:</p>
 <ul>
-	<li>Implement privilege separation on Linux: a master root process
-            (which is able to reconfigure interfaces) and the main process.
-            There is '-s' toggle to keep old behaviour.</li>
-	<li>Fix Linux retrans_timer on old kernels (newer ones have retrans_timer_ms)</li>
-	<li>Fix stderr+syslog (default) logging on non-i386 platforms.</li>
-	<li>Require that interface must be RUNNING instead of just UP.<br/>
-            <b>Note: this could break deployments with very old kernels.</b></li>
-	<li>Implement automatic interface address advertising with special prefix ::/64.</li>
-	<li>Relax interface naming (e.g. with VLANs) requirements.</li>
-	<li>Fix ordering of route, prefix and RDNSS options (only matters with RDNSS)</li>
+    <li>Implement privilege separation on Linux: a master root process (which is able to reconfigure interfaces) and the main process. There is '-s' toggle to keep old behaviour.</li>
+    <li>Fix Linux retrans_timer on old kernels (newer ones have retrans_timer_ms)</li>
+    <li>Fix stderr+syslog (default) logging on non-i386 platforms.</li>
+    <li>Require that interface must be RUNNING instead of just UP.<br/>
+        <b>Note: this could break deployments with very old kernels.</b></li>
+    <li>Implement automatic interface address advertising with special prefix ::/64.</li>
+    <li>Relax interface naming (e.g. with VLANs) requirements.</li>
+    <li>Fix ordering of route, prefix and RDNSS options (only matters with RDNSS)</li>
 </ul>
 
 <p>November 1, 2006 - Version 1.0 updates:</p>
 <ul>
-	<li>Fix AdvDefaultLifetime initalization, broken in 0.9.1.</li>
-	<li>Fix STDERR+syslog logging, don't try STDERR after forking.</li>
-	<li>Implement RDNSS draft with (non-allocated) ND type code 25.</li>
-	<li>Redefined IgnoreIfMissing: failed interfaces are now
-reinitialized by default.  IgnoreIfMissing only omits warnings about these.</li>
-	<li>Unblock SIGALRM at startup.</li>
-	<li>Implement MAX_INITIAL_RTR_ADVERT_INTERVAL handling.</li>
-	<li>Perform some dynamic/static code audit, fix some minor bugs and
-do cleanup as a result.</li>
+    <li>Fix AdvDefaultLifetime initalization, broken in 0.9.1.</li>
+    <li>Fix STDERR+syslog logging, don't try STDERR after forking.</li>
+    <li>Implement RDNSS draft with (non-allocated) ND type code 25.</li>
+    <li>Redefined IgnoreIfMissing: failed interfaces are now reinitialized by default. IgnoreIfMissing only omits warnings about these.</li>
+    <li>Unblock SIGALRM at startup.</li>
+    <li>Implement MAX_INITIAL_RTR_ADVERT_INTERVAL handling.</li>
+    <li>Perform some dynamic/static code audit, fix some minor bugs and do cleanup as a result.</li>
 </ul>
 
 <p>January 13, 2006 - Version 0.9.1 updates:</p>
 <ul>
-  <li>Clean up signed/unsigned values, add more warnings to CFLAGS</li>
-  <li>Fix a couple of  IPv6 Ready Logo Phase-2 IPv6 Core
-                  Protocols Self Test issues</li>
-  <li>Create a short FAQ in README file, other minor documentation updates</li>
-  <li>Get interface MTU automatically, so that you can
-                  use jumboframes and advertise MTU >1500</li>
+    <li>Clean up signed/unsigned values, add more warnings to CFLAGS</li>
+    <li>Fix a couple of IPv6 Ready Logo Phase-2 IPv6 Core Protocols Self Test issues</li>
+    <li>Create a short FAQ in README file, other minor documentation updates</li>
+    <li>Get interface MTU automatically, so that you can use jumboframes and advertise MTU >1500</li>
 </ul>
 
 <p>October 19, 2005 - Version 0.9 updates:</p>
 <ul>
-  <li>radvdump cleaned up, only config-file syntax supported</li>
-   <li>add NEMO Basic support (RFC3961) and fix default
-        HomeAgentLifetime</li>
-  <li>more robust timer handler in case the kernel is buggy</li>
-  <li>new default logging method "stderr_syslog";
-                Everything is logged on syslog, but the most important messages
-    (i.e., start-up failures) are also logged on stderr.</li>
+    <li>radvdump cleaned up, only config-file syntax supported</li>
+    <li>add NEMO Basic support (RFC3961) and fix default HomeAgentLifetime</li>
+    <li>more robust timer handler in case the kernel is buggy</li>
+    <li>new default logging method "stderr_syslog"; Everything is logged on syslog, but the most important messages (i.e., start-up failures) are also logged on stderr.</li>
 </ul>
 
 <p>July 8, 2005 - Version 0.8 updates:</p>
 <ul>
-	<li>More specific route codepoint has been changed to the official value, 24.</li>
-	<li>Fix incorrect calculation of the 6to4 prefix on big-endian
-architectures.</li>
-	<li>Fix a multicast join issue with HUP signal on newer 2.6.12+
-Linux kernels.</li>
-	<li>Merge some MIPv6 and non-MIPv6 code, improve error messages.</li>
-	<li>Improve slightly the error messages from config file parsing.</li>
+    <li>More specific route codepoint has been changed to the official value, 24.</li>
+    <li>Fix incorrect calculation of the 6to4 prefix on big-endian architectures.</li>
+    <li>Fix a multicast join issue with HUP signal on newer 2.6.12+ Linux kernels.</li>
+    <li>Merge some MIPv6 and non-MIPv6 code, improve error messages.</li>
+    <li>Improve slightly the error messages from config file parsing.</li>
 </ul>
 
 <p>February 21, 2005 - Version 0.7.3 updates:</p>
 <ul>
     <li>A large number of fixes and cleanups</li>
     <li>Support Router Preferences and More Specific routes</li>
-    <li>Add "IgnoreIfMissing" interface flag, to be used with
-interfaces which may become available only later on </li>
+    <li>Add "IgnoreIfMissing" interface flag, to be used with interfaces which may become available only later on </li>
 </ul>
-
 
 <p>October 28, 2002 - Version 0.7.2 updates:</p>
 <ul>
-                 <li>add support for VLANs (from USAGI)</li>
-                 <li>make it compile better on newer NetBSD's (NetBSD)</li>
-                 <li>fix a syntax error in radvd.conf(5) sample documentation</li>
-                 <li>use IPV6_RECV{HOPLIMIT,PKTINFO} not 
-                       IPV6_{HOPLIMIT,PKTINFO} if supported</li>
-                 <li>(in Red Hat spec file) don't create radvd gid explicitly</li>
-                 <li>a lot of coding style cleanups</li>
+    <li>add support for VLANs (from USAGI)</li>
+    <li>make it compile better on newer NetBSD's (NetBSD)</li>
+    <li>fix a syntax error in radvd.conf(5) sample documentation</li>
+    <li>use IPV6_RECV{HOPLIMIT,PKTINFO} not IPV6_{HOPLIMIT,PKTINFO} if supported</li>
+    <li>(in Red Hat spec file) don't create radvd gid explicitly</li>
+    <li>a lot of coding style cleanups</li>
 </ul>
 
 <p>January 16, 2002 - Version 0.7.1 updates:</p>
-
 <ul>
-<li>Check that forwarding is enabled when starting radvd (helps avoid odd problems)</li>
-<li>Check configuration file permissions (note: in setuid operation, must not be writable by the user.group)</li>
-<li>Cleanups and enhancements for radvdump</li>
-<li>Ensure NULL-termination with strncpy even with overlong strings (non-criticals, but better safe than 
-sorry)</li>
-<li>Update config.{guess,sub} to cope with some newer architectures</li>
-<li>Minor fixes and cleanups</li>
+    <li>Check that forwarding is enabled when starting radvd (helps avoid odd problems)</li>
+    <li>Check configuration file permissions (note: in setuid operation, must not be writable by the user.group)</li>
+    <li>Cleanups and enhancements for radvdump</li>
+    <li>Ensure NULL-termination with strncpy even with overlong strings (non-criticals, but better safe than sorry)</li>
+    <li>Update config.{guess,sub} to cope with some newer architectures</li>
+    <li>Minor fixes and cleanups</li>
 </ul>
 
-
 <p>November 21, 2001 - Version 0.7.0 updates:</p>
-
 <ul>
- 
-<li>Maintainership of radvd transferred from Lars Fenneberg to Nathan
-Lutchansky and Pekka Savola</li>
-<li>Support for ISATAP and other NMBA link types</li>   
-<li>Bug fixed concerning FreeBSD 4.4 with multiple interfaces</li>
-<li>A few cleanups, including a couple of possible 1-byte buffer
-overflows (non-critical)</li>
+    <li>Maintainership of radvd transferred from Lars Fenneberg to Nathan Lutchansky and Pekka Savola</li>
+    <li>Support for ISATAP and other NMBA link types</li>   
+    <li>Bug fixed concerning FreeBSD 4.4 with multiple interfaces</li>
+    <li>A few cleanups, including a couple of possible 1-byte buffer overflows (non-critical)</li>
 </ul>
 
 <p>June 20, 2001 - Version 0.6.2pl4 updates:</p>
-
 <ul>
-
-<li>Set supplementary groups properly when dropping root (security)</li>
-<li>Do some more RFC2461 validity checks on received packets</li>
-<li>Rejoin all-routers multicast group if interface is cycled</li>
-<li>Remove provider-based addressing support, minor cleanups</li>
-
+    <li>Set supplementary groups properly when dropping root (security)</li>
+    <li>Do some more RFC2461 validity checks on received packets</li>
+    <li>Rejoin all-routers multicast group if interface is cycled</li>
+    <li>Remove provider-based addressing support, minor cleanups</li>
 </ul>
 
 <p>April 28, 2001 - Version 0.6.2pl3 updates:</p>
-
 <ul>
-
-<li>Fixed broken 6to4 support.</li>
-<li>Converted to automake-based build style.</li>
-
+    <li>Fixed broken 6to4 support.</li>
+    <li>Converted to automake-based build style.</li>
 </ul>
 
 <p>April 14, 2001 - Version 0.6.2pl2 updates:</p>
-
 <ul>
-<li>Now compiles on FreeBSD. (suggested by Marko Myllynen)</li>
-<li>Allows negative values for Home Agent Preference. (from Marko Myllynen)</li>
-<li>Misc bugfixes.</li>
+    <li>Now compiles on FreeBSD. (suggested by Marko Myllynen)</li>
+    <li>Allows negative values for Home Agent Preference. (from Marko Myllynen)</li>
+    <li>Misc bugfixes.</li>
 </ul>
 
 <p>April 4, 2001 - Version 0.6.2pl1 contains:</p>
-
 <ul>
-<li>Integrated 6to4 support, to allow a prefix address to be dynamically
-created from the IPv4 address of a specific interface at configuration
-time. (from Nathan Lutchansky)</li>
-<li>The option to have radvd drop root privileges after the ICMP
-socket has been opened. (from Pekka Savola)</li>
-<li>The option to have radvd chroot to a "safe" directory. Currently
-unusable under Linux. (from Pekka Savola)</li>
-<li>Fixed signal handling, allowing signals to take effect immediately
-rather than at the next advertisement. (from Nathan Lutchansky)</li>
-<li>Misc bugfixes. (from Pekka Savola)</li>
-<li>Configuration parser grammar cleanup. (from Nathan Lutchansky)</li>
+    <li>Integrated 6to4 support, to allow a prefix address to be dynamically created from the IPv4 address of a specific interface at configuration time. (from Nathan Lutchansky)</li>
+    <li>The option to have radvd drop root privileges after the ICMP socket has been opened. (from Pekka Savola)</li>
+    <li>The option to have radvd chroot to a "safe" directory. Currently unusable under Linux. (from Pekka Savola)</li>
+    <li>Fixed signal handling, allowing signals to take effect immediately rather than at the next advertisement. (from Nathan Lutchansky)</li>
+    <li>Misc bugfixes. (from Pekka Savola)</li>
+    <li>Configuration parser grammar cleanup. (from Nathan Lutchansky)</li>
 </ul>
 
 <hr/>
-<p>
-<a href="http://6bone.informatik.uni-leipzig.de/ipv6/stats/stats.php3">
-<img alt="IPv6" src="http://6bone.informatik.uni-leipzig.de/ipv6/stats/log.php3?URL=www.litech.org"/></a>
-<a href="http://validator.w3.org/check?uri=referer"><img
-   src="http://www.w3.org/Icons/valid-xhtml10"
-   alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a>
-</p>
+
+<footer>
+    <p>&copy; 1996-2021 <a href="https://radvd.litech.org/">radvd team</a> | <a href="https://github.com/radvd-project/radvd">project organization</a> | <a href="https://github.com/radvd-project/radvd">project source code</a> | <a href="https://github.com/radvd-project/radvd-project.github.io">website source code</a>
+    </p>
+    <p>
+    <!--
+    <a href='http://ipv6-test.com/validate.php?url=referer'><img src='http://ipv6-test.com/button-ipv6-big.png' alt='ipv6 ready' title='ipv6 ready' border='0' /></a>
+    -->
+    <a href="https://validator.w3.org/check?uri=referer"><img src="https://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a>
+    </p>
+</footer>
+
 </body>
+
 </html>
