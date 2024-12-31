@@ -49,42 +49,97 @@
 
 <hr/>
 
+<h2><a name="Maintainers">Maintainers</a></h2>
+
+<p>Since the beginning, several people have managed the project:</p>
+<ul>
+    <li>
+        <a href="https://github.com/robbat2">Robin Hugh Johnson</a> - current maintainer
+        <a href="https://github.com/robbat2.gpg">[GPG]</a>
+    </li>
+    <li>
+        <a href="https://github.com/reubenhwk">Reuben Hawkins</a> - previous maintainer
+    </li>
+    <li>Pekka Savola - previous maintainer</li>
+    <li>
+        <a href="https://github.com/lutchann">Nathan Lutchansky</a> - previous maintainer
+    </li>
+    <li>
+        <a href="https://github.com/elemental-lf">Lars Fenneberg</a> - previous maintainer
+    </li>
+</ul>
+
+<hr/>
+
+<h2><a name="VersionChecker">Version Checker</a></h2>
+
+<p>To see what version is supported by OS:</p>
+<ul>
+    <li>
+        <a href="https://repology.org/project/radvd/versions">Repology</a>
+    </li>
+    <li>
+        <a href="https://release-monitoring.org/project/4157/">Fedora Release Monitoring</a>
+    </li>
+</ul>
+
+<hr/>
+
 <h2><a name="LatestRelease">Latest Release</a></h2>
 
-<p>Sep 23, 2020 - Version 2.19 updates:</p>
+<p>Dec 31, 2024 - Version 2.20 updates:</p>
 <ul>
-    <li>Add PPC64LE support</li>
-    <li>Update PidFile path to avoid system warnings</li>
-    <li>Fix segfault because of accessing NULL pointer</li>
-    <li>Allow building on musl</li>
-    <li>Crash on SIGHUP when config file removed.</li>
-    <li>Don't force -fstack-protector, the toolchain might lack support for it</li>
-    <li>fix wrong assignment of struct msghdr</li>
-    <li>Change location of tmpfiles to /run to avoid warnings</li>
+    <li>build: annotated/signed tags need a tweak to verify correctly</li>
+    <li>build: need awk for newer autoconf</li>
+    <li>build: verify tag earlier</li>
+    <li>build: drop sha1, insecure</li>
+    <li>build: use BSD-style checksum tags</li>
+    <li>build: make sign &gt; verify tighter</li>
+    <li>build: cleanup old tarballs first</li>
+    <li>docs: document formal release process</li>
+    <li>ci: Updated FreeBSD workflow to fix the boot loop issue.</li>
+    <li>ci: Removed Ubuntu 18.04 build.</li>
+    <li>docs: Expand on RELEASE-PROCESS.md</li>
+    <li>ci: Updated the checkout action version.</li>
+    <li>fix: Prevent null de-reference when using poll in main_loop</li>
+    <li>ci: use improved buildroot images.</li>
+    <li>fix(netlink): cleanup interfaces upon removal</li>
+    <li>fix: Add the socket option IPV6_MULTICAST_LOOP to prevent the interface from autoconfiguring using RA messages sent by itself.</li>
+    <li>ci: Added Ubuntu 24.04.</li>
+    <li>ci: Also use ubuntu-latest for the FreeBSD build</li>
+    <li>ci: Use latest v1 action in all cases</li>
+    <li>feat: implement setup_allrouters_membership() et al for FreeBSD #145</li>
+    <li>chore: remove unused 'total_seen_options' variable</li>
+    <li>feat: Change the Prefix field of the Route Information Option to be variable-length.</li>
+    <li>test: add more RDNSS testing for PR#193</li>
+    <li>feat: Support more addresses in RDNSS section</li>
+    <li>feat: improve warning about long RA options</li>
+    <li>fix: do not die on long DNSSL option</li>
+    <li>test: support older libcheck for ubuntu20.04</li>
+    <li>chore: document more testcases</li>
+    <li>chore: make RDNSS/DNSSL documentation and logic consistent</li>
+    <li>doc: update AUTHORS in manpage</li>
+    <li>doc: fix truncated sentence about VRRP</li>
+    <li>feat: handle long options better</li>
+    <li>fix: ensure send_ra_forall racount only increments for non-unicast</li>
+    <li>ci: radvd-autogen updates for ubuntu20.04</li>
+    <li>build: missing files from packages</li>
 </ul>
 
 <h3><a name="Download">Download</a></h3>
 
 <ul>
     <li>
-        <a href="dist/radvd-2.19.tar.gz">radvd-2.19.tar.gz</a>
-        <a href="dist/radvd-2.19.tar.gz.asc">[tar.gz.asc]</a>
-        <a href="dist/radvd-2.19.tar.gz.sha1">[sha1]</a>
-        <a href="dist/radvd-2.19.tar.gz.sha1.asc">[sha1.asc]</a>
-        <a href="dist/radvd-2.19.tar.gz.sha256">[sha256]</a>
-        <a href="dist/radvd-2.19.tar.gz.sha256.asc">[sha256.asc]</a>
-        <a href="dist/radvd-2.19.tar.gz.sha512">[sha512]</a>
-        <a href="dist/radvd-2.19.tar.gz.sha512.asc">[sha512.asc]</a>
+        <a href="dist/radvd-2.20.tar.gz">radvd-2.20.tar.gz</a>
+        <a href="dist/radvd-2.20.tar.gz.asc">[tar.gz.asc]</a>
+        <a href="dist/radvd-2.20.tar.gz.sha256">[sha256]</a>
+        <a href="dist/radvd-2.20.tar.gz.sha512">[sha512]</a>
     </li>
     <li>
-        <a href="dist/radvd-2.19.tar.xz">radvd-2.19.tar.xz</a>
-        <a href="dist/radvd-2.19.tar.xz.asc">[tar.xz.asc]</a>
-        <a href="dist/radvd-2.19.tar.xz.sha1">[sha1]</a>
-        <a href="dist/radvd-2.19.tar.xz.sha1.asc">[sha1.asc]</a>
-        <a href="dist/radvd-2.19.tar.xz.sha256">[sha256]</a>
-        <a href="dist/radvd-2.19.tar.xz.sha256.asc">[sha256.asc]</a>
-        <a href="dist/radvd-2.19.tar.xz.sha512">[sha512]</a>
-        <a href="dist/radvd-2.19.tar.xz.sha512.asc">[sha512.asc]</a>
+        <a href="dist/radvd-2.20.tar.xz">radvd-2.20.tar.xz</a>
+        <a href="dist/radvd-2.20.tar.xz.asc">[tar.xz.asc]</a>
+        <a href="dist/radvd-2.20.tar.xz.sha256">[sha256]</a>
+        <a href="dist/radvd-2.20.tar.xz.sha512">[sha512]</a>
     </li>
 </ul>
 
@@ -92,7 +147,7 @@
 
 <hr/>
 
-<h2><a name="OlderVersions">Older versions</a></h2>
+<h2><a name="OlderVersions">Older Versions</a></h2>
 
 <p>Available:</p>
 
@@ -105,7 +160,37 @@
     </li>
 </ul>
 
-<h3><a name="OlderUpdateInformations">Older update informations</a></h3>
+<h3><a name="OlderUpdateInformations">Older Update Informations</a></h3>
+
+<p>Nov 16, 2023 - Version 2.20 RC1 updates:</p>
+<ul>
+    <li>UnrestrictedUnicast option (respond to RS with configured clients)</li>
+    <li>Ignore clients w/ ! prefix</li>
+    <li>Build improvement, inc. containers for reproducible packaging</li>
+    <li>Captive-Portal API (RFC8910)</li>
+    <li>Default lifetime changes for RDNSS &gt; DNSSL (RFC8106)</li>
+    <li>Prefix lifetime based on kernel lifetimes</li>
+    <li>Netlink fixes for simultaneous POLLERR &gt; POLLIN</li>
+    <li>pwname fixes for root (Fixes #165)</li>
+    <li>Secure ND timestamp support for radvdump (RFC3971)</li>
+    <li>RemoveAdvOnExit for zero lifetime adv on exit</li>
+    <li>NAT64/pref64 support (RFC6052, RFC8781)</li>
+    <li>Case-insensitive config options</li>
+    <li>AutoIgnorePrefix</li>
+    <li>Fix net.ipv6.conf.all.forwarding cease_adv bug</li>
+</ul>
+
+<p>Sep 23, 2020 - Version 2.19 updates:</p>
+<ul>
+    <li>Add PPC64LE support</li>
+    <li>Update PidFile path to avoid system warnings</li>
+    <li>Fix segfault because of accessing NULL pointer</li>
+    <li>Allow building on musl</li>
+    <li>Crash on SIGHUP when config file removed.</li>
+    <li>Don't force -fstack-protector, the toolchain might lack support for it</li>
+    <li>fix wrong assignment of struct msghdr</li>
+    <li>Change location of tmpfiles to /run to avoid warnings</li>
+</ul>
 
 <p>Feb 25, 2019 - Version 2.18 updates:</p>
 <ul>
@@ -538,7 +623,7 @@
 <hr/>
 
 <footer>
-    <p>&copy; 1996-2021 <a href="https://radvd.litech.org/">radvd team</a> | <a href="https://github.com/radvd-project/">project organization</a> | <a href="https://github.com/radvd-project/radvd">project source code</a> | <a href="https://github.com/radvd-project/radvd/releases/">project releases</a> | <a href="https://github.com/radvd-project/radvd-project.github.io">website source code</a>
+    <p>Copyright &copy; 1996-2025 <a href="https://radvd.litech.org/">radvd team</a> | <a href="https://github.com/radvd-project/">project organization</a> | <a href="https://github.com/radvd-project/radvd">project source code</a> | <a href="https://github.com/radvd-project/radvd/releases/">project releases</a> | <a href="https://github.com/radvd-project/radvd-project.github.io">website source code</a>
     </p>
     <p>
     <!--
