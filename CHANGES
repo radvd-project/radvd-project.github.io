@@ -192,7 +192,7 @@
 		improved netlink message processing to *only* reinit an
 			interface that changed.
 
-2014/04/10	Add compiler attributes to type check format strings <Cristian Rodríguez>
+2014/04/10	Add compiler attributes to type check format strings <Cristian RodrÃ­guez>
 
 2014/03/18	release 1.10.0
 
@@ -417,7 +417,7 @@
 2010/01/28	Keep track of buffer size and exit if the number of
 		prefixes/routes/etc. would grow too much. Prevent a memory
                 corruption due to wrong memset. Patches from Jan
-                Görig, Red Hat bug #554125.
+                GÃ¶rig, Red Hat bug #554125.
 
 2010/01/22	On BSD use getifaddrs() also in setup_deviceinfo(),
 		fixes a multiple interfaces problem on NetBSD 5 due to
@@ -537,8 +537,8 @@
 		relating to missing interfaces.
 
 2006/03/29	Implement RDNSS draft, using non-allocated
-		IANA ND type value 25, by Lauréline Provost,
-                Mickaël Guérin, Adrien Clerc, Gaetan Eleouet,
+		IANA ND type value 25, by LaurÃ©line Provost,
+                MickaÃ«l GuÃ©rin, Adrien Clerc, Gaetan Eleouet,
                 Bahattin Demirplak, Lionel Guilmin (at the
                 ENSEEIHT, Toulouse)
 
@@ -617,7 +617,7 @@
 		 - send zero router lifetime when forwarding is disabled
 		 - use a more flexible inter-RA delay
 
-2005/01/07	Accomodate interface indexes > 9999, from Hagen Fritsch.
+2005/01/07	Accommodate interface indexes > 9999, from Hagen Fritsch.
 
 2004/12/15	Advertise zero Router Lifetime when shutting down;
 		implements a SHOULD in RFC2461 section 6.2.5.
@@ -714,7 +714,7 @@
 		(Pekka Savola)
 
 2001/06/30	Check for possible buffer overflows; replace strcpy with
-		strncpy.  No fatals found.  Remove redunant radvd -t check.
+		strncpy.  No fatals found.  Remove redundant radvd -t check.
 		(Pekka Savola)
 
 2001/06/24	Fix 1-byte overflow in /proc/net/igmp6 handling,
@@ -782,7 +782,7 @@
 		BSD seems to need patches.
 
 1997/10/16	more intelligent configure; tries to figure out
-		where the IPv6 libraries and inclues are (if not in
+		where the IPv6 libraries and includes are (if not in
 		the standard places). Searches in /usr/inet6 and /usr/ipv6.
 
 1997/10/15	integrated small patches for glibc and BSD from Craig and
@@ -791,9 +791,9 @@
 1997/09/14	EUI-64 "support"
 
 1997/09/01	centralized all includes into includes.h for easier
-		maintainance
+		maintenance
 
-1997/08/25	changed all occurences of IPV6_TXINFO/IPV6_RXINFO
+1997/08/25	changed all occurrences of IPV6_TXINFO/IPV6_RXINFO
 		to IPV6_PKTINFO
 
 1997/08/25	removed some compatibility stuff for older Linux kernels
@@ -853,7 +853,7 @@
 
 1996/11/17	added setsockopt(..., SOL_IPV6, IPV6_MULTICAST_HOPS), so
 	 	that radvd works for kernel versions >2.1.7 (without this
-	 	you get "NDISC: fake router advertisment received" on your
+	 	you get "NDISC: fake router advertisement received" on your
 	 	hosts)
 	
 1996/11/17	added a man page for radvd(8)
