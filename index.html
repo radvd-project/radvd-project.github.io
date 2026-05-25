@@ -3,11 +3,11 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <title>Linux IPv6 Router Advertisement Daemon (radvd)</title>
+    <title>radvd: IPv6 Router Advertisement Daemon</title>
 </head>
 
 <body>
-<h1 style="text-align: center">Linux IPv6 Router Advertisement Daemon (radvd)</h1>
+<h1 style="text-align: center">radvd: IPv6 Router Advertisement Daemon</h1>
 
 <p>The router advertisement daemon (radvd) is run by Linux or BSD systems acting as IPv6 routers. It sends Router Advertisement messages, specified by <a href="https://tools.ietf.org/html/rfc2461">RFC 2461</a>, to a local Ethernet LAN periodically and when requested by a node sending a Router Solicitation message. These messages are required for IPv6 stateless autoconfiguration.</p>
 
@@ -86,6 +86,86 @@
 <hr/>
 
 <h2><a name="LatestRelease">Latest Release</a></h2>
+<p>2026/05/25: Release v2.21</p>
+<ul>
+	<li>feat: release v2.21</li>
+	<li>feat: harden radvdump (CVE-2026-48715, thanks to @TristanInSec)</li>
+	<li>feat: RFC8319 support: Increase max AdvDefaultLifetime and MaxRtrAdvInterval</li>
+	<li>feat: Add DHCPv6-PD preferred flag</li>
+	<li>build: docker updates</li>
+	<li>build: README moved</li>
+	<li>git ignore more</li>
+	<li>ci: recent fedora needs awk</li>
+	<li>ci: add stock GitHub CodeQL scanning before customization</li>
+	<li>ci: setup codeql build-mode=manual</li>
+	<li>build: update configure.ac using autoupdate-2.69 from ubuntu20.04</li>
+	<li>ci: workaround makefile dep ordering issue</li>
+	<li>ci: more autoconf for codeql</li>
+	<li>ci: always parallel build</li>
+	<li>ci: bleeding edge autoupdate causes large codeql failure</li>
+	<li>ci: stricter build triggers</li>
+	<li>ci: bsd make != linux make</li>
+	<li>build: correctness & testcase for CodeQL</li>
+	<li>test: increase snprintf safety</li>
+	<li>fix: improve file checks for procfs knobs</li>
+	<li>ci: lock down workflow permissions</li>
+	<li>feat: allow libc strlcpy</li>
+	<li>ci: fix non-immutable Action</li>
+	<li>build: bsd has libcheck available as well</li>
+	<li>ci: improve BSD workflow to run tests</li>
+	<li>fix: make libcheck fatal if missing with --with-check</li>
+	<li>build: drop ubuntu20.04 due to EOL</li>
+	<li>chore: debug max_ra_option_size calculation</li>
+	<li>chore: skip ND_OPT_CAPTIVE_PORTAL parsing in received main radvd</li>
+	<li>ci: test on ubuntu-26.04</li>
+	<li>refactor: make drop_root_privileges reusable</li>
+	<li>fix: support incoming jumbo packets</li>
+	<li>doc: update reporting location</li>
+	<li>ci: ensure autoconf+automake for opensuse</li>
+	<li>ci: ensure make for opensuse</li>
+	<li>ci: ensure bison+flex for opensuse</li>
+	<li>ci: disable ubuntu-26.04 target</li>
+	<li>ci: ensure xz for opensuse</li>
+	<li>doc: improve AUTHOR tracking and contact info</li>
+	<li>doc: SECURITY</li>
+	<li>Avoid libbsd header with libc strlcpy</li>
+</ul>
+
+<h3><a name="Download">Download</a></h3>
+
+<ul>
+    <li>
+        <a href="dist/radvd-2.21.tar.gz">radvd-2.21.tar.gz</a>
+        <a href="dist/radvd-2.21.tar.gz.asc">[tar.gz.asc]</a>
+        <a href="dist/radvd-2.21.tar.gz.sha256">[sha256]</a>
+        <a href="dist/radvd-2.21.tar.gz.sha512">[sha512]</a>
+    </li>
+    <li>
+        <a href="dist/radvd-2.21.tar.xz">radvd-2.21.tar.xz</a>
+        <a href="dist/radvd-2.21.tar.xz.asc">[tar.xz.asc]</a>
+        <a href="dist/radvd-2.21.tar.xz.sha256">[sha256]</a>
+        <a href="dist/radvd-2.21.tar.xz.sha512">[sha512]</a>
+    </li>
+</ul>
+
+<p>For more informations about recent modifications, please see the <a href="CHANGES">CHANGES</a> file.</p>
+
+<hr/>
+
+<h2><a name="OlderVersions">Older Versions</a></h2>
+
+<p>Available:</p>
+
+<ul>
+    <li>
+        <a href="dist/">In this Website</a>
+    </li>
+    <li>
+        <a href="https://github.com/radvd-project/radvd/releases/">In radvd GitHub releases section</a>
+    </li>
+</ul>
+
+<h3><a name="OlderUpdateInformations">Older Update Informations</a></h3>
 
 <p>Dec 31, 2024 - Version 2.20 updates:</p>
 <ul>
@@ -126,41 +206,6 @@
     <li>build: missing files from packages</li>
 </ul>
 
-<h3><a name="Download">Download</a></h3>
-
-<ul>
-    <li>
-        <a href="dist/radvd-2.20.tar.gz">radvd-2.20.tar.gz</a>
-        <a href="dist/radvd-2.20.tar.gz.asc">[tar.gz.asc]</a>
-        <a href="dist/radvd-2.20.tar.gz.sha256">[sha256]</a>
-        <a href="dist/radvd-2.20.tar.gz.sha512">[sha512]</a>
-    </li>
-    <li>
-        <a href="dist/radvd-2.20.tar.xz">radvd-2.20.tar.xz</a>
-        <a href="dist/radvd-2.20.tar.xz.asc">[tar.xz.asc]</a>
-        <a href="dist/radvd-2.20.tar.xz.sha256">[sha256]</a>
-        <a href="dist/radvd-2.20.tar.xz.sha512">[sha512]</a>
-    </li>
-</ul>
-
-<p>For more informations about recent modifications, please see the <a href="CHANGES">CHANGES</a> file.</p>
-
-<hr/>
-
-<h2><a name="OlderVersions">Older Versions</a></h2>
-
-<p>Available:</p>
-
-<ul>
-    <li>
-        <a href="dist/">In this Website</a>
-    </li>
-    <li>
-        <a href="https://github.com/radvd-project/radvd/releases/">In radvd GitHub releases section</a>
-    </li>
-</ul>
-
-<h3><a name="OlderUpdateInformations">Older Update Informations</a></h3>
 
 <p>Nov 16, 2023 - Version 2.20 RC1 updates:</p>
 <ul>
