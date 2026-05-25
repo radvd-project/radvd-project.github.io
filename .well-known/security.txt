@@ -1,0 +1,22 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Contact: mailto:robbat2@gentoo.org
+Contact: https://github.com/radvd-project/radvd/security/advisories/new
+Expires: 2028-01-01T08:00:00.000Z
+Encryption: https://github.com/robbat2.gpg
+Encryption: https://keybase.io/robbat2/pgp_keys.asc
+Preferred-Languages: en
+Canonical: https://radvd-project.github.io/.well-known/security.txt
+Canonical: https://radvd.litech.org/.well-known/security.txt
+Canonical: https://github.com/radvd-project/radvd-project.github.io/blob/master/.well-known/security.txt
+-----BEGIN PGP SIGNATURE-----
+
+iPEEARYKAJkWIQSvQoUm1yWPQf/4Asc8liGcom4ShwUCahS0cBsUgAAAAAAEAA5t
+YW51MiwyLjUrMS4xMSwyLDJfFIAAAAAALgAoaXNzdWVyLWZwckBub3RhdGlvbnMu
+b3BlbnBncC5maWZ0aGhvcnNlbWFuLm5ldEFGNDI4NTI2RDcyNThGNDFGRkY4MDJD
+NzNDOTYyMTlDQTI2RTEyODcACgkQPJYhnKJuEoc1DQEAmQ8hvDFXumujR6s6Oqvo
+YfaVBS7X3yxhbpKnmgLFKT4A/3X+OCMluFYEHEcUWDHSo1Tq7hd+Lwv3f2PIohwX
+7B0F
+=7w9O
+-----END PGP SIGNATURE-----
